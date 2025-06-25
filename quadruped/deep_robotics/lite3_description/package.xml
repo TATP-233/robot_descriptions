@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>x30_description</name>
+  <name>lite3_description</name>
   <version>0.0.0</version>
-  <description>The x30_description package</description>
+  <description>The lite3_description package</description>
 
   <maintainer email="1973671061@qq.com">ZhenyuXu</maintainer>
   <license>MIT</license>
+
 
   <exec_depend>robot_visualize_config</exec_depend>
 
