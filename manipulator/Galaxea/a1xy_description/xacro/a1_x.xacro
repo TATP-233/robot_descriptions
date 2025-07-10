@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="Arm">
+  <xacro:macro name="Arm" params="name">
+    <xacro:include filename="$(find a1xy_description)/xacro/xy_base.xacro"/>
+    <xacro:property name="prefix" value="${name + '_' if name else ''}"/>
+    <xacro:Base name=""/>
     <link
-        name="arm_link3">
+        name="${prefix}link3">
       <inertial>
         <origin
             xyz="0.0566624793223791 -0.0291316466078999 0.0568018844686509"
@@ -30,15 +33,15 @@
       </collision>
     </link>
     <joint
-        name="arm_joint3"
+        name="${prefix}joint3"
         type="revolute">
       <origin
           xyz="-0.3 0.00025004 0"
           rpy="0 0 0"/>
       <parent
-          link="arm_link2"/>
+          link="${prefix}link2"/>
       <child
-          link="arm_link3"/>
+          link="${prefix}link3"/>
       <axis
           xyz="0 1 0"/>
       <limit
@@ -48,7 +51,7 @@
           velocity="10.472"/>
     </joint>
     <link
-        name="arm_link4">
+        name="${prefix}link4">
       <inertial>
         <origin
             xyz="0.0699840030193581 -0.0287504697364447 0.0541968318197228"
@@ -75,15 +78,15 @@
       </collision>
     </link>
     <joint
-        name="arm_joint4"
+        name="${prefix}joint4"
         type="revolute">
       <origin
           xyz="0.1747 0.00049739 0.075485"
           rpy="0 0 0"/>
       <parent
-          link="arm_link3"/>
+          link="${prefix}link3"/>
       <child
-          link="arm_link4"/>
+          link="${prefix}link4"/>
       <axis
           xyz="0 1 0"/>
       <limit
@@ -93,7 +96,7 @@
           velocity="32.9867"/>
     </joint>
     <link
-        name="arm_link5">
+        name="${prefix}link5">
       <inertial>
         <origin
             xyz="-0.000803198983898074 -2.29028914278118E-07 -0.0402656141956459"
@@ -121,15 +124,15 @@
       </collision>
     </link>
     <joint
-        name="arm_joint5"
+        name="${prefix}joint5"
         type="revolute">
       <origin
           xyz="0.08 -0.031498 0.0405"
           rpy="0 0 0"/>
       <parent
-          link="arm_link4"/>
+          link="${prefix}link4"/>
       <child
-          link="arm_link5"/>
+          link="${prefix}link5"/>
       <axis
           xyz="0 0 1"/>
       <limit
@@ -139,7 +142,7 @@
           velocity="32.9867"/>
     </joint>
     <link
-        name="arm_link6">
+        name="${prefix}link6">
       <inertial>
         <origin
             xyz="0.00709944426961403 -8.90673146347609E-10 -3.82632235882419E-05"
@@ -166,15 +169,15 @@
       </collision>
     </link>
     <joint
-        name="arm_joint6"
+        name="${prefix}joint6"
         type="revolute">
       <origin
           xyz="0.022503 0 -0.0405"
           rpy="0 0 0"/>
       <parent
-          link="arm_link5"/>
+          link="${prefix}link5"/>
       <child
-          link="arm_link6"/>
+          link="${prefix}link6"/>
       <axis
           xyz="1 0 0"/>
       <limit
@@ -182,6 +185,16 @@
           upper="2.8798"
           effort="14"
           velocity="32.9867"/>
+    </joint>
+
+    <xacro:include filename="$(find a1xy_description)/xacro/gripper.xacro"/>
+    <xacro:Gripper name="${name}"/>
+
+    <joint name="${prefix}gripper_joint" type="fixed">
+      <origin xyz="0.08165 0 0"/>
+      <parent link="${prefix}link6"/>
+      <child link="${prefix}gripper_link"/>
+      <axis xyz="0 0 0"/>
     </joint>
   </xacro:macro>
 </robot>
