@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:macro name="Arm" params="name">
-    <xacro:include filename="$(find a1xy_description)/xacro/xy_base.xacro"/>
+    <xacro:include filename="(find galaxea_a1_description)/xacro/a1xy_base.xacro"/>
     <xacro:property name="prefix" value="${name + '_' if name else ''}"/>
     <xacro:Base name=""/>
     <link
@@ -23,12 +23,12 @@
       <visual>
 
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/x_link/link3.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/a1_x/link3.obj"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/x_link/link3.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/a1_x/link3.obj"/>
         </geometry>
       </collision>
     </link>
@@ -68,12 +68,12 @@
       </inertial>
       <visual>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/x_link/link4.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/a1_x/link4.obj"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/x_link/link4.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/a1_x/link4.obj"/>
         </geometry>
       </collision>
     </link>
@@ -113,13 +113,13 @@
       </inertial>
       <visual>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/x_link/link5.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/a1_x/link5.obj"/>
         </geometry>
       </visual>
       <collision>
 
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/x_link/link5.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/a1_x/link5.obj"/>
         </geometry>
       </collision>
     </link>
@@ -159,12 +159,12 @@
       </inertial>
       <visual>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/link6.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/link6.obj"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/link6.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/link6.obj"/>
         </geometry>
       </collision>
     </link>
@@ -187,7 +187,7 @@
           velocity="32.9867"/>
     </joint>
 
-    <xacro:include filename="$(find a1xy_description)/xacro/gripper.xacro"/>
+    <xacro:include filename="(find galaxea_a1_description)/xacro/gripper.xacro"/>
     <xacro:Gripper name="${name}"/>
 
     <joint name="${prefix}gripper_joint" type="fixed">

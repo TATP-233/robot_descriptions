@@ -18,12 +18,12 @@
       </inertial>
       <visual>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/xy_base/base_link.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/base_link.obj"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="file://$(find a1xy_description)/meshes/xy_base/base_link.obj"/>
+          <mesh filename="file://$(find galaxea_a1_description)/meshes/a1_xy/base_link.obj"/>
         </geometry>
       </collision>
     </link>
@@ -49,7 +49,7 @@
             rpy="0 0 0"/>
         <geometry>
           <mesh
-              filename="file://$(find a1xy_description)/meshes/xy_base/link1.obj"/>
+              filename="file://$(find galaxea_a1_description)/meshes/a1_xy/link1.obj"/>
         </geometry>
         <material
             name="">
@@ -63,7 +63,7 @@
             rpy="0 0 0"/>
         <geometry>
           <mesh
-              filename="file://$(find a1xy_description)/meshes/xy_base/link1.obj"/>
+              filename="file://$(find galaxea_a1_description)/meshes/a1_xy/link1.obj"/>
         </geometry>
       </collision>
     </link>
@@ -107,7 +107,7 @@
             rpy="0 0 0"/>
         <geometry>
           <mesh
-              filename="file://$(find a1xy_description)/meshes/xy_base/link2.obj"/>
+              filename="file://$(find galaxea_a1_description)/meshes/a1_xy/link2.obj"/>
         </geometry>
         <material
             name="">
@@ -121,7 +121,7 @@
             rpy="0 0 0"/>
         <geometry>
           <mesh
-              filename="file://$(find a1xy_description)/meshes/xy_base/link2.obj"/>
+              filename="file://$(find galaxea_a1_description)/meshes/a1_xy/link2.obj"/>
         </geometry>
       </collision>
     </link>

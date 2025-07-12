@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.8)
-project(a1xy_description)
+project(galaxea_r1_description)
 
 find_package(ament_cmake REQUIRED)
 
 install(
-		DIRECTORY meshes urdf xacro config
+		DIRECTORY meshes xacro
 		DESTINATION share/${PROJECT_NAME}/
 )
 

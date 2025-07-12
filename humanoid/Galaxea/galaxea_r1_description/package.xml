@@ -1,10 +1,10 @@
 <package format="2">
-  <name>a1xy_description</name>
+  <name>galaxea_r1_description</name>
   <version>1.0.0</version>
   <description>
-    <p>URDF Description package for A1_URDF_0607_0028</p>
+    <p>URDF Description package for Galaxea R1 Robot</p>
     <p>This package contains configuration data, 3D models and launch files
-      for A1_URDF_0607_0028 robot
+      for Galaxea R1 robot
     </p>
   </description>
   <author>TODO</author>
@@ -12,6 +12,7 @@
   <license>BSD</license>
 
   <exec_depend>robot_visualize_config</exec_depend>
+  <exec_depend>galaxea_a1_description</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
