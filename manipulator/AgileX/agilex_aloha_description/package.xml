@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>mobile_aloha2_description</name>
+  <name>agilex_aloha_description</name>
   <version>1.0.0</version>
   <description>
     <p>URDF Description package for AgileX Mobile Aloha2</p>
