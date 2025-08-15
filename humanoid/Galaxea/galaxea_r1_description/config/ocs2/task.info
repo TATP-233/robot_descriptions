@@ -11,17 +11,17 @@ model_information {
     [4]  "wheel_motor_joint2"
     [5]  "wheel_motor_joint3"
 
-    [6]  "left_arm_gripper_joint1"
-    [7]  "left_arm_gripper_joint2"
-    [8]  "right_arm_gripper_joint1"
-    [9]  "right_arm_gripper_joint2"
+    [6]  "left_gripper_joint"
+    [7]  "left_gripper_joint2"
+    [8]  "right_gripper_joint"
+    [9]  "right_gripper_joint2"
   }
 
   ; base frame of the robot (from URDF)
   baseFrame                       "base_link"
   ; end-effector frame of the robot (from URDF)
-  eeFrame                         "left_arm_gripper_base_link"
-  eeFrame1                        "right_arm_gripper_base_link"
+  eeFrame                         "left_gripper_center"
+  eeFrame1                        "right_gripper_center"
 }
 
 model_settings
@@ -171,10 +171,10 @@ inputCost
     {
       scaling 1e-2
 
-         (0,0)   10.0       ; torso_joint1
-         (1,0)   10.0       ; torso_joint2
-         (2,0)   10.0       ; torso_joint3
-         (3,0)   10.0       ; torso_joint4
+         (0,0)   0.1       ; torso_joint1
+         (1,0)   0.1       ; torso_joint2
+         (2,0)   0.1       ; torso_joint3
+         (3,0)   0.1       ; torso_joint4
          (4,0)   1.0        ; left_arm_joint1
          (5,0)   1.0        ; left_arm_joint2
          (6,0)   1.0        ; left_arm_joint3

@@ -11,9 +11,6 @@
         <geometry>
           <mesh filename="${mesh_path}${mesh}"/>
         </geometry>
-        <material name="">
-          <color rgba="0.79216 0.81961 0.93333 1"/>
-        </material>
       </visual>
       <collision>
         <geometry>
@@ -68,7 +65,7 @@
         <xacro:visual_collision mesh="base_link_aidal.obj"/>
       </xacro:if>
       <xacro:if value="${direction != 'l' and direction != 'r'}">
-        <xacro:visual_collision mesh="base_link.obj"/>
+        <xacro:visual_collision mesh="base_link.dae"/>
       </xacro:if>
     </link>
     <link name="${prefix}link1">
@@ -83,7 +80,7 @@
             iyz="-0.00021118"
             izz="0.00056131"/>
       </inertial>
-      <xacro:visual_collision mesh="link1.obj"/>
+      <xacro:visual_collision mesh="link1.dae"/>
     </link>
     <link name="${prefix}link2">
       <inertial>
@@ -97,7 +94,7 @@
             iyz="3.5857E-09"
             izz="0.0019528"/>
       </inertial>
-      <xacro:visual_collision mesh="link2.obj"/>
+      <xacro:visual_collision mesh="link2.dae"/>
     </link>
     <link name="${prefix}link3">
       <inertial>
@@ -111,7 +108,7 @@
             iyz="-0.00014461"
             izz="0.00061418"/>
       </inertial>
-      <xacro:visual_collision mesh="link3.obj"/>
+      <xacro:visual_collision mesh="link3.dae"/>
     </link>
     <link name="${prefix}link4">
       <inertial>
@@ -125,7 +122,7 @@
             iyz="4.424E-05"
             izz="0.0001199"/>
       </inertial>
-      <xacro:visual_collision mesh="link4.obj"/>
+      <xacro:visual_collision mesh="link4.dae"/>
     </link>
     <link name="${prefix}link5">
       <inertial>
@@ -139,7 +136,7 @@
             iyz="-7.824E-05"
             izz="0.00033447"/>
       </inertial>
-      <xacro:visual_collision mesh="link5.obj"/>
+      <xacro:visual_collision mesh="link5.dae"/>
     </link>
     <link name="${prefix}link6">
       <inertial>
@@ -224,13 +221,13 @@
       <child link="${prefix}gripper_plate"/>
     </joint>
 
-    <xacro:include filename="$(find inspire_eg2_description)/xacro/eg2_4c2.xacro"/>
-    <xacro:Gripper name="${prefix}gripper"/>
+    <xacro:include filename="$(find inspire_description)/xacro/EG2-4C2.xacro"/>
+    <xacro:Gripper name="${name}"/>
 
-    <joint name="${prefix}gripper_joint" type="fixed">
-      <origin xyz="0 0 0.0043" rpy="0 0 0"/>
+    <joint name="${prefix}gripper_base_joint" type="fixed">
+      <origin xyz="0 0 0.0043"/>
       <parent link="${prefix}gripper_plate" />
-      <child link="${prefix}gripper_base_link" />
+      <child link="${prefix}gripper_base" />
     </joint>
   </xacro:macro>
 </robot>

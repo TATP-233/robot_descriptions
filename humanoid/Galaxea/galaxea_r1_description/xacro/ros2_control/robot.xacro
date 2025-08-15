@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="R1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Include Chassis -->
+  <xacro:include filename="$(find galaxea_r1_description)/xacro/chassis.xacro"/>
+  <xacro:Chassis/>
+
+  <!-- Include Torso -->
+  <xacro:include filename="$(find galaxea_r1_description)/xacro/torso.xacro"/>
+  <xacro:Torso/>
+
+  <!-- Include Left Arm -->
+  <xacro:include filename="$(find galaxea_a1_description)/xacro/a1.xacro"/>
+  <xacro:Arm name="left" direction="left"/>
+
+  <!-- Left Arm Base Joint: Torso 4 to Left Arm -->
+  <joint name="left_arm_base_joint" type="fixed">
+    <origin xyz="0.00077694 0.097234 0.30285" rpy="-1.5708 0 0"/>
+    <parent link="torso_link4"/>
+    <child link="left_base_link"/>
+  </joint>
+
+  <!-- Include Left RealSense Camera -->
+  <xacro:include filename="$(find galaxea_r1_description)/xacro/realsense.xacro"/>
+  <xacro:RealSense side="left"/>
+
+  <!-- Include Right Arm -->
+  <xacro:Arm name="right" direction="right"/>
+
+  <!-- Right Arm Base Joint: Torso 4 to Right Arm -->
+  <joint name="right_arm_base_joint" type="fixed">
+    <origin xyz="0.00077778 -0.097235 0.30285" rpy="1.5708 0 0"/>
+    <parent link="torso_link4"/>
+    <child link="right_base_link"/>
+  </joint>
+
+  <!-- Include Right RealSense Camera -->
+  <xacro:RealSense side="right"/>
+
+  <!-- Import Piper ros2_control description -->
+  <xacro:include filename="$(find galaxea_a1_description)/xacro/ros2_control/galaxea_a1.ros2_control.xacro" />
+  <xacro:galaxea_a1_system name="left" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+  <xacro:galaxea_a1_system name="right" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+
+  <xacro:include filename="$(find galaxea_r1_description)/xacro/ros2_control/galaxea_r1.ros2_control.xacro" />
+  <xacro:galaxea_r1_system ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+
+  <xacro:arg name="gazebo" default="false" />
+  <xacro:if value="$(arg gazebo)">
+    <gazebo>
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find galaxea_r1_description)/config/ros2_control/ros2_controllers.yaml</parameters>
+      </plugin>
+    </gazebo>
+  </xacro:if>
+</robot>
