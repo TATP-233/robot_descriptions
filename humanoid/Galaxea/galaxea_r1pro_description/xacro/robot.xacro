@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="R1Pro" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Include Chassis -->
+  <xacro:include filename="$(find galaxea_r1_description)/xacro/chassis.xacro"/>
+  <xacro:Chassis/>
+
+  <!-- Include Torso -->
+  <xacro:include filename="$(find galaxea_r1_description)/xacro/torso.xacro"/>
+  <xacro:Torso/>
+
+  <xacro:include filename="pro_arm.xacro"/>
+  <xacro:Arm name="left"/>
+  <xacro:Arm name="right" direction="-1"/>
+
+  <xacro:include filename="$(find galaxea_r1pro_description)/xacro/realsense.xacro"/>
+  <xacro:RealSense side="left"/>
+  <xacro:RealSense side="right"/>
+</robot>
