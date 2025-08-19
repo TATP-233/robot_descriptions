@@ -232,18 +232,13 @@
 			<limit lower="0" upper="0.04" effort="100" velocity="2"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="1" offset="0"/>
 		</joint>
-		
-		<link name="${prefix}custom_end_link">
-			<inertial>
-				<mass value="1E-15"/>
-				<inertia ixx="1E-11" ixy="1E-15" ixz="1E-15" iyy="1E-11" iyz="1E-15" izz="1E-11"/>
-			</inertial>
-		</link>
+
+		<link name="${prefix}gripper_center"/>
 
 		<joint name="${prefix}joint_custom_end" type="fixed">
 			<origin xyz="0 0 0.02" rpy="0 -1.5708 0"/>
 			<parent link="${prefix}link6"/>
-			<child link="${prefix}custom_end_link"/>
+			<child link="${prefix}gripper_center"/>
 		</joint>
 
 		<link name="${prefix}camera_link"/>

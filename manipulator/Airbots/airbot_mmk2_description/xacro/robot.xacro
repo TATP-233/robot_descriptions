@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="mmk2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:include filename="$(find airbot_mmk2_description)/xacro/mmk2_base.xacro"/>
+
+  <!-- left arm -->
+  <joint name="left_arm_fixed_joint" type="fixed">
+    <origin xyz="0.10174 0.02283 0.09475" rpy="1.57079633 0 2.356194490192345"/>
+    <parent link="slide_link" />
+    <child link="left_base_link" />
+  </joint>
+
+  <xacro:include filename="$(find airbot_play_description)/xacro/airbot_play.xacro"/>
+  <xacro:airbot_play name="left"/>
+
+  <!-- right arm -->
+  <joint name="right_arm_fixed_joint" type="fixed">
+    <origin xyz="-0.10174 0.02283 0.09475" rpy="-1.57079633 0 0.7853981633974483"/>
+    <parent link="slide_link" />
+    <child link="right_base_link" />
+  </joint>
+  <xacro:airbot_play name="right"/>
+</robot>
