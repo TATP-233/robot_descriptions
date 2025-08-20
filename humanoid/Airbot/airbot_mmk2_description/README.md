@@ -1,4 +1,4 @@
-# Airbot Play Description
+# Airbot MMK2 Description
 
 This package contains the description files for Discover Robotics's Airbot Play manipulator. The origin models could be cound at [DISCOVERSE](https://github.com/TATP-233/DISCOVERSE).
 
@@ -15,7 +15,7 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch robot_visualize_config manipulator.launch.py robot:=airbot_mmk2
 ```
 
-![airbot play](../../.images/airbot_play.png)
+![airbot play](../../.images/airbot_mmk2.png)
 
 ## 3. OCS2 Demo
 
@@ -30,5 +30,10 @@ ros2 launch robot_visualize_config manipulator_ocs2.launch.py robot_name:=airbot
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=airbot_play hardware:=gz
+ros2 launch ocs2_arm_controller demo.launch.py robot:=airbot_mmk2
+```
+
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller demo.launch.py robot:=airbot_mmk2 hardware:=gz
 ```

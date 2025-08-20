@@ -2,7 +2,7 @@
   <name>airbot_mmk2_description</name>
   <version>1.0.0</version>
   <description>
-    <p>URDF Description package for Airbot Play manipulator</p>
+    <p>URDF Description package for Airbot MMK2 Humanoid</p>
     <p>This package contains configuration data, 3D models and launch files
       for Airbot Play manipulator
     </p>
@@ -11,6 +11,7 @@
   <maintainer email="TODO@email.com"/>
   <license>BSD</license>
 
+  <depend>airbot_play_description</depend>
   <exec_depend>robot_visualize_config</exec_depend>
 
   <export>

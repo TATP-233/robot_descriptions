@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="mmk2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Include mmk2 base -->
+  <xacro:include filename="$(find airbot_mmk2_description)/xacro/robot.xacro"/>
+
+  <!-- Import mmk2 ros2_control description -->
+  <xacro:include filename="$(find airbot_mmk2_description)/xacro/ros2_control/airbot_mmk2.ros2_control.xacro" />
+  <xacro:airbot_mmk2_system ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+
+  <!-- Import airbot play ros2_control description for arms -->
+  <xacro:include filename="$(find airbot_play_description)/xacro/ros2_control/airbot_play.ros2_control.xacro" />
+  <xacro:airbot_play_system name="left" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+  <xacro:airbot_play_system name="right" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+
+  <xacro:arg name="gazebo" default="false" />
+  <xacro:if value="$(arg gazebo)">
+    <gazebo>
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find airbot_mmk2_description)/config/ros2_control/ros2_controllers.yaml</parameters>
+      </plugin>
+    </gazebo>
+  </xacro:if>
+</robot>
