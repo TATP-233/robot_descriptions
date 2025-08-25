@@ -15,7 +15,7 @@
 
   <!-- Import R5 ros2_control description -->
   <xacro:include filename="$(find cr5_description)/xacro/ros2_control/cr5.ros2_control.xacro"/>
-  <xacro:cr5_system name="cr5System" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+  <xacro:cr5_system name="" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
 
   <xacro:arg name="type" default="robotiq85"/>
 

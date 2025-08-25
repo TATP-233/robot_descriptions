@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="cr5_system" params="name ros2_control_hardware_type">
+  <xacro:macro name="elite_ec_system" params="name ros2_control_hardware_type">
 
     <xacro:property name="prefix" value="${name + '_' if name else ''}"/>
 
-    <ros2_control name="${prefix}cr5System" type="system">
+    <ros2_control name="${prefix}elite_ec_system" type="system">
       <hardware>
         <xacro:if value="${ros2_control_hardware_type == 'gz'}">
           <plugin>gz_ros2_control/GazeboSimSystem</plugin>
@@ -50,7 +50,7 @@
       <joint name="${prefix}joint3">
         <command_interface name="position"/>
         <state_interface name="position">
-          <param name="initial_value">-1.5708</param>
+          <param name="initial_value">1.5708</param>
         </state_interface>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>

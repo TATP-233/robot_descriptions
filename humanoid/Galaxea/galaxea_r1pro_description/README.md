@@ -36,5 +36,5 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=galaxea_r1pro
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=galaxea_r1pro hardware:=gz
+ros2 launch ocs2_arm_controller demo.launch.py robot:=galaxea_r1pro hardware:=gz world:=warehouse
 ```

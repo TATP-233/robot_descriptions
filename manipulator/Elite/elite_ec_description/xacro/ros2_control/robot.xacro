@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="CR5">
+  <xacro:arg name="ros2_control_hardware_type" default="mock_components"/>
+
+  <link name="world"/>
+
+  <joint name="world_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin/>
+  </joint>
+
+  <xacro:include filename="$(find elite_ec_description)/xacro/robot.xacro"/>
+  <xacro:include filename="$(find elite_ec_description)/xacro/ros2_control/elite_ec.ros2_control.xacro"/>
+  <xacro:elite_ec_system name="" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+
+  <xacro:arg name="gazebo" default="false"/>
+  <xacro:if value="$(arg gazebo)">
+    <gazebo>
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find elite_ec_description)/config/ros2_control/ros2_controllers.yaml</parameters>
+      </plugin>
+    </gazebo>
+  </xacro:if>
+</robot>
