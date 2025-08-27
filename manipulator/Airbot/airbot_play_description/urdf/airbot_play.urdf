@@ -12,12 +12,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/arm_base.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/arm_base.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/arm_base.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/arm_base.obj"/>
       </geometry>
     </collision>
   </link>
@@ -29,12 +29,17 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link1.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/link1.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link1.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/link1_collision_0.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link1_collision_1.obj"/>
       </geometry>
     </collision>
   </link>
@@ -53,12 +58,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link2.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/link2.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link2.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/link2_collision_0.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link2_collision_1.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link2_collision_2.obj"/>
       </geometry>
     </collision>
   </link>
@@ -77,12 +92,27 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link3.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/link3.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link3.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/link3_collision_0.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link3_collision_1.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link3_collision_2.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link3_collision_3.obj"/>
       </geometry>
     </collision>
   </link>
@@ -101,12 +131,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link4.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/link4.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link4.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/link4.obj"/>
       </geometry>
     </collision>
   </link>
@@ -125,12 +155,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link5.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/link5.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link5.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/link5.obj"/>
       </geometry>
     </collision>
   </link>
@@ -149,12 +179,32 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link6.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/link6.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/link6.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/link6_collision_0.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link6_collision_1.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link6_collision_2.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link6_collision_3.obj"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://airbot_play_description/meshes/collision/link6_collision_4.obj"/>
       </geometry>
     </collision>
   </link>
@@ -173,12 +223,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/gripper.obj" scale="1 -1 1"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/gripper.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/gripper.obj" scale="1 -1 1"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/gripper.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -197,16 +247,16 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/gripper.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/visual/gripper.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://airbot_play_description/meshes/gripper.obj"/>
+        <mesh filename="package://airbot_play_description/meshes/collision/gripper.obj"/>
       </geometry>
     </collision>
   </link>
-  <joint name="endright" type="prismatic">
+  <joint name="gripper_joint1" type="prismatic">
     <origin rpy="0 -1.5708 0"/>
     <parent link="link6"/>
     <child link="right"/>
