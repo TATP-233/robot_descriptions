@@ -7,11 +7,6 @@
   <xacro:include filename="$(find airbot_mmk2_description)/xacro/ros2_control/airbot_mmk2.ros2_control.xacro" />
   <xacro:airbot_mmk2_system ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
 
-  <!-- Import airbot play ros2_control description for arms -->
-  <xacro:include filename="$(find airbot_play_description)/xacro/ros2_control/airbot_play.ros2_control.xacro" />
-  <xacro:airbot_play_system name="left" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
-  <xacro:airbot_play_system name="right" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
-
   <xacro:arg name="gazebo" default="false" />
   <xacro:if value="$(arg gazebo)">
     <gazebo>

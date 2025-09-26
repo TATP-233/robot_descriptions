@@ -2,6 +2,9 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:macro name="airbot_mmk2_system" params="ros2_control_hardware_type">
 
+    <!-- Import airbot play ros2_control description for arms -->
+    <xacro:include filename="$(find airbot_play_description)/xacro/ros2_control/airbot_interface.ros2_control.xacro" />
+
     <ros2_control name="airbot_mmk2_system" type="system">
       <hardware>
         <xacro:if value="${ros2_control_hardware_type == 'gz'}">
@@ -63,6 +66,9 @@
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
+
+      <xacro:airbot_play_interface name="left"/>
+      <xacro:airbot_play_interface name="right"/>
 
     </ros2_control>
   </xacro:macro>
