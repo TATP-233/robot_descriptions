@@ -52,5 +52,5 @@ colcon build --packages-up-to arx_lift_description --symlink-install
 * Lift with R5 Arm
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_lift type:=r5 hardware:=gz world:=warehouse
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=arx_lift type:=r5 hardware:=gz world:=dart
   ```

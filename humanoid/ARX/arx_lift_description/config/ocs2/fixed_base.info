@@ -8,8 +8,6 @@ model_information {
     [1]  "joint_h_2"
     [2]  "left_gripper_joint"
     [3]  "right_gripper_joint"
-    [4]  "left_joint8"
-    [5]  "right_joint8"
   }
 
   ; base frame of the robot (from URDF)
@@ -163,20 +161,20 @@ inputCost
     ; input costs for the arm DOFs
     arm
     {
-      scaling 1e-2
-        (0,0)   0.01      ; joint_lift
-        (1,0)   1.0      ; left_joint1
-        (2,0)   1.0      ; left_joint2
-        (3,0)   1.0      ; left_joint3
-        (4,0)   1.0      ; left_joint4
-        (5,0)   1.0      ; left_joint5
-        (6,0)   1.0      ; left_joint6
-        (7,0)   1.0      ; right_joint1
-        (8,0)   1.0      ; right_joint2
-        (9,0)   1.0      ; right_joint3
-        (10,0)   1.0     ; right_joint4
-        (11,0)   1.0     ; right_joint5
-        (12,0)   1.0     ; right_joint6
+      scaling 1e-3
+        (0,0)   0.1         ; joint_lift
+        (1,0)   5.0         ; left_joint1
+        (2,0)   5.0         ; left_joint2
+        (3,0)   5.0         ; left_joint3
+        (4,0)   5.0         ; left_joint4
+        (5,0)   5.0         ; left_joint5
+        (6,0)   5.0         ; left_joint6
+        (7,0)   5.0         ; right_joint1
+        (8,0)   5.0         ; right_joint2
+        (9,0)   5.0         ; right_joint3
+        (10,0)   5.0        ; right_joint4
+        (11,0)   5.0        ; right_joint5
+        (12,0)   5.0        ; right_joint6
     }
   }
 }

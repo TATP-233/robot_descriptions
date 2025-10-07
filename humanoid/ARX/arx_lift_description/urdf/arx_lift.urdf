@@ -593,7 +593,7 @@
     <parent link="base"/>
     <child link="lift_link"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="100" lower="0.0" upper="0.86" velocity="100"/>
+    <limit effort="1000" lower="0.0" upper="0.86" velocity="100"/>
   </joint>
   <link name="h_base_link">
     <inertial>
