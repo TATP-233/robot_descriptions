@@ -73,8 +73,8 @@ rollout
 ; MPC settings
 mpc
 {
-  timeHorizon                     1.0   ; [s]
-  solutionTimeWindow              0.2   ; [s]
+  timeHorizon                     2.0   ; [s]
+  solutionTimeWindow              0.4   ; [s]
   coldStart                       false
   
   debugPrint                      false
@@ -171,14 +171,14 @@ inputCost
     ; input costs for the arm DOFs
     arm
     {
-      scaling 1e-2
+      scaling 1e-3
 
-      (0,0)  1.0  ; arm_1 velocity
-      (1,1)  1.0  ; arm_2 velocity
-      (2,2)  1.0  ; arm_3 velocity
-      (3,3)  1.0  ; arm_4 velocity
-      (4,4)  1.0  ; arm_5 velocity
-      (5,5)  1.0  ; arm_6 velocity
+      (0,0)  2.0  ; arm_1 velocity
+      (1,1)  2.0  ; arm_2 velocity
+      (2,2)  2.0  ; arm_3 velocity
+      (3,3)  2.0  ; arm_4 velocity
+      (4,4)  2.0  ; arm_5 velocity
+      (5,5)  2.0  ; arm_6 velocity
     }
   }
 }
@@ -186,14 +186,14 @@ inputCost
 endEffector
 {
   ; end effector quadratic penalty scaling
-  muPosition      10.0
-  muOrientation    5.0
+  muPosition      5.0
+  muOrientation    2.5
 }
 
 finalEndEffector
 {
-  muPosition      10.0
-  muOrientation    5.0
+  muPosition      5.0
+  muOrientation    2.5
 }
 
 selfCollision
@@ -207,7 +207,8 @@ selfCollision
       [0] "1, 5",
       [1] "1, 8",
       [2] "4, 11",
-      [3] "7, 11"
+      [3] "7, 11"，
+      [4] "1, 11"
   }
 
   ; Self Collision pairs

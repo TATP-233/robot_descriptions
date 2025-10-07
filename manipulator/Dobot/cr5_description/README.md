@@ -13,47 +13,55 @@ colcon build --packages-up-to cr5_description --symlink-install
 * Without gripper
     ```bash
     source ~/ros2_ws/install/setup.bash
-    ros2 launch robot_visualize_config manipulator.launch.py robot:=cr5
+    ros2 launch robot_common_launch manipulator.launch.py robot:=cr5
     ```
     ```bash
     source ~/ros2_ws/install/setup.bash
-    ros2 launch robot_visualize_config manipulator.launch.py robot:=cr5 collider:=simple
+    ros2 launch robot_common_launch manipulator.launch.py robot:=cr5 collider:=simple
     ```
     ![cr5](../../.images/dobot_cr5.png)
 
 * With Robotiq 85 Gripper
     ```bash
     source ~/ros2_ws/install/setup.bash
-    ros2 launch robot_visualize_config manipulator.launch.py robot:=cr5 type:="robotiq85"
+    ros2 launch robot_common_launch manipulator.launch.py robot:=cr5 type:="robotiq85"
     ```
   ![cr5 robotiq85](../../.images/dobot_cr5_robotiq85.png)
 
 * With ChangingTek AG2F90-C Gripper
-    ```bash
-    source ~/ros2_ws/install/setup.bash
-    ros2 launch robot_visualize_config manipulator.launch.py robot:=cr5 type:="AG2F90-C"
-    ```
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch manipulator.launch.py robot:=cr5 type:="AG2F90-C-Soft"
+  ```
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch manipulator.launch.py robot:=cr5 type:="AG2F90-C"
+  ```
   ![cr5 ag2f90-c](../../.images/dobot_cr5_ag2f90-c.png)
 
 ## 3. OCS2 Demo
 ### 3.1 Official OCS2 Mobile Manipulator Demo
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch robot_visualize_config manipulator_ocs2.launch.py robot_name:=cr5
+ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=cr5
 ```
 
 ![cr5 ocs2](../../.images/dobot_cr5_ocs2.gif)
 
 ### 3.2 OCS2 Arm Controller Demo
-
+* Mock Components
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C
+  ```
 * Gazebo
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F90-C-Soft world:=dart
   ```
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F120S world:=dart
   ```
 * Isaac Sim
   ```bash
