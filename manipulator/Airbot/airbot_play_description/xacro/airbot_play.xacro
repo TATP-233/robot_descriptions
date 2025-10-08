@@ -17,7 +17,7 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/arm_base.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/arm_base.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -35,12 +35,7 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link1_collision_0.obj"/>
-				</geometry>
-			</collision>
-			<collision>
-				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link1_collision_1.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link1.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -67,17 +62,17 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link2_collision_0.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link2_0.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link2_collision_1.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link2_1.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link2_collision_2.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link2_2.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -103,22 +98,17 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_collision_0.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_0.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_collision_1.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_1.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_collision_2.obj"/>
-				</geometry>
-			</collision>
-			<collision>
-				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_collision_3.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link3_2.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -144,7 +134,7 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link4.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link4.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -170,7 +160,7 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link5.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link5.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -196,27 +186,27 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_collision_0.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_0.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_collision_1.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_1.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_collision_2.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_2.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_collision_3.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_3.stl"/>
 				</geometry>
 			</collision>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_collision_4.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/link6_4.stl"/>
 				</geometry>
 			</collision>
 		</link>
@@ -243,7 +233,7 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/gripper.obj" scale="1 -1 1"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/gripper.stl" scale="1 -1 1"/>
 				</geometry>
 			</collision>
 		</link>
@@ -270,7 +260,7 @@
 			</visual>
 			<collision>
 				<geometry>
-					<mesh filename="file://$(find airbot_play_description)/meshes/collision/gripper.obj"/>
+					<mesh filename="file://$(find airbot_play_description)/meshes/collision/gripper.stl"/>
 				</geometry>
 			</collision>
 		</link>
