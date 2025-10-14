@@ -201,4 +201,10 @@
     <axis xyz="0 0 1"/>
     <limit effort="300" lower="-6.283185307179586" upper="6.283185307179586" velocity="3.141592653589793"/>
   </joint>
+  <link name="tcp"/>
+    <joint name="tcp_joint" type="fixed">
+      <origin xyz="0 0 0.29"/>
+      <parent link="Link6"/>
+      <child link="tcp"/>
+    </joint>
 </robot>
