@@ -4,7 +4,7 @@
 	<xacro:macro name="CR5" params="name collider:=convex">
 
 		<xacro:property name="prefix" value="${name + '_' if name else ''}"/>
-		<link name="base_link">
+		<link name="${prefix}base_link">
 			<inertial>
 				<origin xyz="-8.0961E-06 0.0019103 0.028995"/>
 				<mass value="0.90882"/>
@@ -29,16 +29,18 @@
 						<cylinder length="0.1" radius="0.1"/>
 					</geometry>
 				</collision>
-				<collision>
-					<origin xyz="0 0 -0.025"/>
-					<geometry>
-						<box size="1.5 1.5 0.05"/>
-					</geometry>
-				</collision>
+				<xacro:if value="${prefix == ''}">
+					<collision>
+						<origin xyz="0 0 -0.025"/>
+						<geometry>
+							<box size="1.5 1.5 0.05"/>
+						</geometry>
+					</collision>
+				</xacro:if>
 			</xacro:if>
 		</link>
 
-		<link name="Link1">
+		<link name="${prefix}Link1">
 			<inertial>
 				<origin xyz="-8.7268E-07 -0.0032576 -0.0076748"/>
 				<mass value="1.6123"/>
@@ -70,15 +72,15 @@
 			</xacro:if>
 		</link>
 
-		<joint name="joint1" type="revolute">
-			<origin xyz="0 0 0.147"/>
-			<parent link="base_link"/>
-			<child link="Link1"/>
+	<joint name="${prefix}joint1" type="revolute">
+		<origin xyz="0 0 0.147"/>
+		<parent link="${prefix}base_link"/>
+		<child link="${prefix}Link1"/>
 			<axis xyz="0 0 1"/>
 			<limit lower="${-2*PI}" upper="${2*PI}" effort="300" velocity="${PI}"/>
 		</joint>
 
-		<link name="Link2">
+		<link name="${prefix}Link2">
 			<inertial>
 				<origin xyz="-0.21351 -1.3842E-06 0.14252"/>
 				<mass value="5.5186"/>
@@ -128,15 +130,15 @@
 			</xacro:if>
 		</link>
 
-		<joint name="joint2" type="revolute">
-			<origin rpy="${PI/2} ${PI/2} 0"/>
-			<parent link="Link1"/>
-			<child link="Link2"/>
+	<joint name="${prefix}joint2" type="revolute">
+		<origin rpy="${PI/2} ${PI/2} 0"/>
+		<parent link="${prefix}Link1"/>
+		<child link="${prefix}Link2"/>
 			<axis xyz="0 0 1"/>
 			<limit lower="${-2*PI}" upper="${2*PI}" effort="300" velocity="${PI}"/>
 		</joint>
 
-		<link name="Link3">
+		<link name="${prefix}Link3">
 			<inertial>
 				<origin xyz="-0.15231 -1.4079E-07 0.022693"/>
 				<mass value="2.8536"/>
@@ -186,15 +188,15 @@
 			</xacro:if>
 		</link>
 
-		<joint name="joint3" type="revolute">
-			<origin xyz="-0.427 0 0"/>
-			<parent link="Link2"/>
-			<child link="Link3"/>
+	<joint name="${prefix}joint3" type="revolute">
+		<origin xyz="-0.427 0 0"/>
+		<parent link="${prefix}Link2"/>
+		<child link="${prefix}Link3"/>
 			<axis xyz="0 0 1"/>
 			<limit lower="-2.7925" upper="2.7925" effort="300" velocity="3.14159"/>
 		</joint>
 
-		<link name="Link4">
+		<link name="${prefix}Link4">
 			<inertial>
 				<origin xyz="-3.2386E-07 -0.002077 -0.0015548"/>
 				<mass value="0.67058"/>
@@ -222,14 +224,14 @@
 			</xacro:if>
 		</link>
 
-		<joint name="joint4" type="revolute">
-			<origin xyz="-0.357 0 0.141" rpy="0 0 ${-PI/2}"/>
-			<parent link="Link3"/>
-			<child link="Link4"/>
+	<joint name="${prefix}joint4" type="revolute">
+		<origin xyz="-0.357 0 0.141" rpy="0 0 ${-PI/2}"/>
+		<parent link="${prefix}Link3"/>
+		<child link="${prefix}Link4"/>
 			<axis xyz="0 0 1"/>
 			<limit lower="${-2*PI}" upper="${2*PI}" effort="300" velocity="${PI}"/>
 		</joint>
-		<link name="Link5">
+		<link name="${prefix}Link5">
 			<inertial>
 				<origin xyz="-3.7738E-07 -0.0045777 -0.0012971"/>
 				<mass value="0.7269"/>
@@ -257,15 +259,15 @@
 			</xacro:if>
 		</link>
 
-		<joint name="joint5" type="revolute">
-			<origin xyz="0 -0.116 0" rpy="${PI/2} 0 0"/>
-			<parent link="Link4"/>
-			<child link="Link5"/>
+	<joint name="${prefix}joint5" type="revolute">
+		<origin xyz="0 -0.116 0" rpy="${PI/2} 0 0"/>
+		<parent link="${prefix}Link4"/>
+		<child link="${prefix}Link5"/>
 			<axis xyz="0 0 1"/>
 			<limit lower="${-2*PI}" upper="${2*PI}" effort="300" velocity="${PI}"/>
 		</joint>
 
-		<link name="Link6">
+		<link name="${prefix}Link6">
 			<inertial>
 				<origin xyz="5.0777E-11 9.3774E-05 -0.019285"/>
 				<mass value="0.15789"/>
@@ -293,10 +295,10 @@
 			</xacro:if>
 		</link>
 
-		<joint name="joint6" type="revolute">
-			<origin xyz="0 0.105 0" rpy="${-PI/2} 0 0"/>
-			<parent link="Link5"/>
-			<child link="Link6"/>
+	<joint name="${prefix}joint6" type="revolute">
+		<origin xyz="0 0.105 0" rpy="${-PI/2} 0 0"/>
+		<parent link="${prefix}Link5"/>
+		<child link="${prefix}Link6"/>
 			<axis xyz="0 0 1"/>
 			<limit lower="${-2*PI}" upper="${2*PI}" effort="300" velocity="${PI}"/>
 		</joint>
