@@ -37,7 +37,7 @@ def generate_launch_description():
         ]),
         launch_arguments=[
             ('robot', 'cr5'),
-            ('type', 'empty'),
+            ('type', 'AG2F90-C-Soft'),
             ('hardware', 'real'),
         ],
     )

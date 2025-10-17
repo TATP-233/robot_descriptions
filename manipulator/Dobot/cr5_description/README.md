@@ -57,7 +57,7 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=cr5
 * Mock Components
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py type:="robotiq85"
+  ros2 launch ocs2_arm_controller demo.launch.py  type:=AG2F90-C-Soft
   ```
 * Gazebo
   ```bash
@@ -92,4 +92,13 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=cr5
   ```bash
   source ~/ros2_ws/install/setup.bash
   ros2 launch cr5_description dobot_bringup_ros2.launch.py 
+  ```
+* Launch Dobot ROS2 Control
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=real type:=AG2F90-C-Soft
+  ```
+    ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=real type:=empty
   ```
