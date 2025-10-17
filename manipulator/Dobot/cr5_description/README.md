@@ -57,21 +57,21 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=cr5
 * Mock Components
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py type:=AG2F90-C
+  ros2 launch ocs2_arm_controller demo.launch.py type:="robotiq85"
   ```
 * Gazebo
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F90-C-Soft world:=dart
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F90-C-Soft
   ```
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F120S world:=dart
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=gz type:=AG2F120S
   ```
 * Isaac Sim
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac type:=AG2F90-C
+  ros2 launch ocs2_arm_controller demo.launch.py hardware:=isaac type:=AG2F90-C-Soft
   ```
 
 ## 4. Real Dobot CR5 Deploy
