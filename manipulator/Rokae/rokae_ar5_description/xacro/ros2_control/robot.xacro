@@ -28,6 +28,10 @@
         <param name="sum_wrapped_joint_states">false</param>
         <param name="initialize_commands_from_state">true</param>
       </xacro:if>
+      <xacro:if value="${'$(arg ros2_control_hardware_type)' == 'real'}">
+        <plugin>rokae_ros2_control/RokaeHardware</plugin>
+        <param name="arm_ip">192.168.2.160</param>
+      </xacro:if>
     </hardware>
 
     <xacro:ar5_interfaces name=""/>

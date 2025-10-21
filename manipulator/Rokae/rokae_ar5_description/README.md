@@ -1,6 +1,6 @@
 # Rokae AR5 Description
 
-This package contains the description files for Rokae AR5 Manipulator. 
+This package contains the description files for Rokae AR5 Manipulator.
 
 ## 1. Build
 
@@ -27,6 +27,7 @@ colcon build --packages-up-to rokae_ar5_description --symlink-install
 ## 3. OCS2 Demo
 
 ### 3.1 Official OCS2 Mobile Manipulator Demo
+
 * Left Arm
   ```bash
   source ~/ros2_ws/install/setup.bash
@@ -62,4 +63,12 @@ colcon build --packages-up-to rokae_ar5_description --symlink-install
   # Right Arm
   source ~/ros2_ws/install/setup.bash
   ros2 launch ocs2_arm_controller demo.launch.py robot:=rokae_ar5 hardware:=gz type:=right
+  ```
+
+## 4. Real Robot Deploy
+
+* Single Left Arm
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=rokae_ar5 hardware:=real
   ```
