@@ -66,6 +66,7 @@ This repository uses git submodules to manage shared components and specific rob
 |------|------|------------|-------------|
 | Common Components | `common` | [robot-descriptions-common](https://github.com/fiveages-sim/robot-descriptions-common) | Shared grippers, dexterous hands, camera models, and launch utilities |
 | Dobot CR5 | `manipulator/Dobot` | [robot-descriptions-dobot](https://github.com/fiveages-sim/robot-descriptions-dobot) | 6-DOF collaborative robot arm with real hardware integration |
+| Tianji M6 | `manipulator/Tianji` | [robot-descriptions-tianji](https://github.com/fiveages-sim/robot-descriptions-tianji) | M6-CCS and M6-SRS manipulator arms |
 
 ### Using Submodules
 
@@ -81,6 +82,9 @@ git submodule update --init common
 
 # For Dobot robot
 git submodule update --init manipulator/Dobot
+
+# For Tianji robot
+git submodule update --init manipulator/Tianji
 ```
 
 **Update submodules to latest version:**

@@ -6,3 +6,7 @@
 	path = manipulator/Dobot
 	url = git@github.com:fiveages-sim/robot-descriptions-dobot.git
 	branch = main
+[submodule "manipulator/Tianji"]
+	path = manipulator/Tianji
+	url = git@github.com:fiveages-sim/robot-descriptions-tianji.git
+	branch = main
