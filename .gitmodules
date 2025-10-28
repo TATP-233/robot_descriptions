@@ -10,3 +10,7 @@
 	path = manipulator/Tianji
 	url = git@github.com:fiveages-sim/robot-descriptions-tianji.git
 	branch = main
+[submodule "manipulator/Rokae"]
+	path = manipulator/Rokae
+	url = git@github.com:fiveages-sim/robot-descriptions-rokae.git
+	branch = main
