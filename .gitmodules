@@ -14,3 +14,7 @@
 	path = manipulator/Rokae
 	url = git@github.com:fiveages-sim/robot-descriptions-rokae.git
 	branch = main
+[submodule "humanoid/FiveAges/fiveages_w1_description"]
+	path = humanoid/FiveAges/fiveages_w1_description
+	url = git@github.com:fiveages-sim/fa-w1-description.git
+	branch = main
