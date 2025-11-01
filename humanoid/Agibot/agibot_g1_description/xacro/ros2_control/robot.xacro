@@ -47,6 +47,12 @@
 			<xacro:ag2f120s_interfaces name="left"/>
 			<xacro:ag2f120s_interfaces name="right"/>
 		</xacro:if>
+
+		<xacro:if value="${'$(arg type)' == 'omni-picker'}">
+			<xacro:include filename="$(find agibot_omni_description)/xacro/ros2_control/omni_picker.xacro"/>
+			<xacro:omni_picker_interfaces name="left"/>
+			<xacro:omni_picker_interfaces name="right"/>
+		</xacro:if>
 	</ros2_control>
 
 	<xacro:arg name="gazebo" default="false" />

@@ -3,6 +3,7 @@
 	<xacro:macro name="omni-picker" params="name">
 		<xacro:property name="mesh_path" value="file://$(find agibot_omni_description)/meshes/omni_picker"/>
 		<xacro:property name="prefix" value="${name + '_' if name else ''}"/>
+		<xacro:property name="PI" value="3.1415926535897931"/>
 
 		<link name="${prefix}gripper_base">
 			<inertial>
@@ -42,11 +43,11 @@
 		</link>
 
 		<joint name="${prefix}gripper_joint" type="revolute">
-			<origin xyz="0 -0.0195 0.0565" rpy="-2.9951 -1.5708 -0.15964"/>
+			<origin xyz="0 -0.0195 0.0565" rpy="-2.9951 -${PI/2} -0.15964"/>
 			<parent link="${prefix}gripper_base"/>
 			<child link="${prefix}narrow1_Link"/>
 			<axis xyz="0 0 1"/>
-			<limit lower="0" upper="1" effort="0" velocity="0"/>
+			<limit lower="0" upper="1" effort="50" velocity="${PI}"/>
 		</joint>
 
 		<link name="${prefix}narrow2_Link">
@@ -78,7 +79,7 @@
 			<parent link="${prefix}narrow1_Link"/>
 			<child link="${prefix}narrow2_Link"/>
 			<axis xyz="0 0 -1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="0.02" offset="0"/>
 		</joint>
 
@@ -111,7 +112,7 @@
 			<parent link="${prefix}narrow2_Link"/>
 			<child link="${prefix}narrow3_Link"/>
 			<axis xyz="0 0 -1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="0.4" offset="0"/>
 		</joint>
 
@@ -121,7 +122,7 @@
 			<parent link="${prefix}narrow3_Link"/>
 			<child link="${prefix}narrow4_Link"/>
 			<axis xyz="0 0 1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 		</joint>
 
 		<link name="${prefix}narrow_loop_Link">
@@ -149,11 +150,11 @@
 		</link>
 
 		<joint name="${prefix}narrow_loop_joint" type="revolute">
-			<origin xyz="0 -0.021633 0.07387" rpy="-2.9951 -1.5708 -0.15964"/>
+			<origin xyz="0 -0.021633 0.07387" rpy="-2.9951 -${PI/2} -0.15964"/>
 			<parent link="${prefix}gripper_base"/>
 			<child link="${prefix}narrow_loop_Link"/>
 			<axis xyz="0 0 1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="1.5" offset="0"/>
 		</joint>
 
@@ -182,11 +183,11 @@
 		</link>
 
 		<joint name="${prefix}wide1_joint" type="revolute">
-			<origin xyz="0 0.0195 0.0565" rpy="-2.9951 -1.5708 -0.15964"/>
+			<origin xyz="0 0.0195 0.0565" rpy="-2.9951 -${PI/2} -0.15964"/>
 			<parent link="${prefix}gripper_base"/>
 			<child link="${prefix}wide1_Link"/>
 			<axis xyz="0 0 -1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="1" offset="0"/>
 		</joint>
 
@@ -219,7 +220,7 @@
 			<parent link="${prefix}wide1_Link"/>
 			<child link="${prefix}wide2_Link"/>
 			<axis xyz="0 0 1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="0.02" offset="0"/>
 		</joint>
 
@@ -252,7 +253,7 @@
 			<parent link="${prefix}wide2_Link"/>
 			<child link="${prefix}wide3_Link"/>
 			<axis xyz="0 0 1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="0.4" offset="0"/>
 		</joint>
 
@@ -288,11 +289,11 @@
 		</link>
 
 		<joint name="${prefix}wide_loop_joint" type="revolute">
-			<origin xyz="0 0.021633 0.07387" rpy="-2.9951 -1.5708 -0.15964"/>
+			<origin xyz="0 0.021633 0.07387" rpy="-2.9951 -${PI/2} -0.15964"/>
 			<parent link="${prefix}gripper_base"/>
 			<child link="${prefix}wide_loop_Link"/>
 			<axis xyz="0 0 -1"/>
-			<limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+			<limit lower="-${PI}" upper="${PI}" effort="50" velocity="${PI}"/>
 			<mimic joint="${prefix}gripper_joint" multiplier="1.5" offset="0"/>
 		</joint>
 

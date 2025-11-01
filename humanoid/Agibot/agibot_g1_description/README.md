@@ -66,6 +66,10 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=agibot_g1
   source ~/ros2_ws/install/setup.bash
   ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1 hardware:=gz world:=warehouse
   ```
+    ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1 hardware:=gz type:=omni-picker world:=warehouse
+  ```
 * Isaac Sim
   ```bash
   source ~/ros2_ws/install/setup.bash
