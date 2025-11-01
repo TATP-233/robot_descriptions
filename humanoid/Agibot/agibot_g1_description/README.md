@@ -10,13 +10,29 @@ colcon build --packages-up-to agibot_g1_description --symlink-install
 
 ## 2. Visualize the robot
 
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 launch robot_common_launch manipulator.launch.py robot:=agibot_g1
-```
+* Full Robot
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch manipulator.launch.py robot:=agibot_g1
+  ```
     
-![G1](../../.images/agibot_g1.png)
-
+  ![G1](../../.images/agibot_g1.png)
+* Base
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py
+  ```
+* Left Arm
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py type:=left
+  ```
+* Right Arm
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py type:=right
+  ```
+  
 ## 3. OCS2 Demo
 
 ### 3.1 Official OCS2 Mobile Manipulator Demo
@@ -31,16 +47,22 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=agibot_g1
 
 ### 3.2 OCS2 Arm Controller Demo
 
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1
-```
+* Mock Components
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1
+  ```
 
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1 hardware:=gz world:=warehouse
-```
-
+* Gazebo
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1 hardware:=gz world:=warehouse
+  ```
+* Isaac Sim
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=agibot_g1 hardware:=isaac
+  ```
 ### 4. Navigation
 * Gazebo Simulation
   ```bash
