@@ -62,4 +62,27 @@
 		<xacro:Camera name="left"/>
 		<xacro:Camera name="right"/>
 	</xacro:if>
+
+	<xacro:if value="${'$(arg type)' == 'omni-picker'}">
+		<xacro:include filename="$(find agibot_omni_description)/xacro/omni_picker.xacro"/>
+		<xacro:omni-picker name="left"/>
+		<xacro:omni-picker name="right"/>
+
+		<!-- Gripper joints -->
+		<joint name="ee_left_joint" type="fixed">
+			<origin xyz="0 0 0.0052" rpy="0 0 1.5708"/>
+			<parent link="left_end_link"/>
+			<child link="left_gripper_base"/>
+		</joint>
+
+		<joint name="ee_right_joint" type="fixed">
+			<origin xyz="0 0 0.0052" rpy="0 0 -1.5708"/>
+			<parent link="right_end_link"/>
+			<child link="right_gripper_base"/>
+		</joint>
+
+		<xacro:include filename="$(find agibot_g1_description)/xacro/omnipicker_camera_stand.xacro"/>
+		<xacro:Camera name="left"/>
+		<xacro:Camera name="right"/>
+	</xacro:if>
 </robot>

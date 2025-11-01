@@ -9,14 +9,22 @@ colcon build --packages-up-to agibot_g1_description --symlink-install
 ```
 
 ## 2. Visualize the robot
-
-* Full Robot
+### 2.1 Full Robot
+* With 120S Gripper
   ```bash
   source ~/ros2_ws/install/setup.bash
   ros2 launch robot_common_launch manipulator.launch.py robot:=agibot_g1
   ```
     
-  ![G1](../../.images/agibot_g1.png)
+  ![G1](../.images/agibot_g1.png)
+* With Omni Picker
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch manipulator.launch.py robot:=agibot_g1 type:=omni-picker
+  ```
+
+  ![G1](../.images/agibot_g1_omnipicker.png)
+### 2.2 Component
 * Base
   ```bash
   source ~/ros2_ws/install/setup.bash
