@@ -11,7 +11,7 @@ colcon build --packages-up-to agibot_omni_description --symlink-install
 
 ## Visualize
 
-* Omni Piker
+* Omni Picker
   ```bash
   source ~/ros2_ws/install/setup.bash
   ros2 launch robot_common_launch gripper.launch.py gripper:=agibot_omni

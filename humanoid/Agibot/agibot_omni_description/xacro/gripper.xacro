@@ -1,4 +1,4 @@
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="gripper">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="OmniPicker">
 
   <xacro:include filename="$(find agibot_omni_description)/xacro/omni_picker.xacro" />
   <xacro:omni-picker name=""/>
