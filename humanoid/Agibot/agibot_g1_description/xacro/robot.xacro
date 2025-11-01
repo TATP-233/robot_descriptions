@@ -3,7 +3,9 @@
 <!-- |    Complete Robot Description for Agibot G1                                     | -->
 <!-- |    This file includes the base robot structure and both arms                    | -->
 <!-- =================================================================================== -->
-<robot name="genie" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="Agibot G1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:arg name="type" default="AG2F120S"/>
 
 	<!-- Include the base robot structure -->
 	<xacro:include filename="$(find agibot_g1_description)/xacro/g1_base.xacro"/>
@@ -14,12 +16,6 @@
 	<!-- Generate left and right arms using macro -->
 	<xacro:G1Arm name="left"/>
 	<xacro:G1Arm name="right" direction="-1"/>
-
-	<xacro:arg name="type" default="AG2F120S"/>
-	<!-- Include gripper -->
-	<xacro:include filename="$(find changingtek_description)/xacro/AG2F120S.xacro"/>
-	<xacro:AG2F120S name="left"/>
-	<xacro:AG2F120S name="right"/>
 
 	<!-- Arm base links -->
 	<link name="arm_base"/>
@@ -43,20 +39,27 @@
 		<origin rpy="-1.5707963267948966 0.0 3.141592653589793" xyz="0.0 -0.025 0.0"/>
 	</joint>
 
-	<!-- Gripper joints -->
-	<joint name="ee_left_joint" type="fixed">
-		<origin xyz="0 0 0.027727" rpy="0 0 3.1415"/>
-		<parent link="left_end_link"/>
-		<child link="left_gripper_base"/>
-	</joint>
+	<xacro:if value="${'$(arg type)' == 'AG2F120S'}">
+		<!-- Include gripper -->
+		<xacro:include filename="$(find changingtek_description)/xacro/AG2F120S.xacro"/>
+		<xacro:AG2F120S name="left"/>
+		<xacro:AG2F120S name="right"/>
 
-	<joint name="ee_right_joint" type="fixed">
-		<origin xyz="0 0 0.027727" rpy="0 0 3.1415"/>
-		<parent link="right_end_link"/>
-		<child link="right_gripper_base"/>
-	</joint>
+		<!-- Gripper joints -->
+		<joint name="ee_left_joint" type="fixed">
+			<origin xyz="0 0 0.027727" rpy="0 0 3.1415"/>
+			<parent link="left_end_link"/>
+			<child link="left_gripper_base"/>
+		</joint>
 
-	<xacro:include filename="$(find agibot_g1_description)/xacro/120s_camera_stand.xacro"/>
-	<xacro:Camera name="left"/>
-	<xacro:Camera name="right"/>
+		<joint name="ee_right_joint" type="fixed">
+			<origin xyz="0 0 0.027727" rpy="0 0 3.1415"/>
+			<parent link="right_end_link"/>
+			<child link="right_gripper_base"/>
+		</joint>
+
+		<xacro:include filename="$(find agibot_g1_description)/xacro/120s_camera_stand.xacro"/>
+		<xacro:Camera name="left"/>
+		<xacro:Camera name="right"/>
+	</xacro:if>
 </robot>
