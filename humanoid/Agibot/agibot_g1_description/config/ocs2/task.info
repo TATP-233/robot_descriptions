@@ -6,16 +6,15 @@ model_information {
   removeJoints {
     [0]  "head_joint1"
     [1]  "head_joint2"
-
-    [2]  "left_gripper_joint"
-    [3]  "right_gripper_joint"
+    [2]  "left_wheel_joint"
+    [3]  "right_wheel_joint"
   }
 
   ; base frame of the robot (from URDF)
   baseFrame                       "base_footprint"
   ; end-effector frame of the robot (from URDF)
-  eeFrame                         "left_gripper_center"
-  eeFrame1                        "right_gripper_center"
+  eeFrame                         "left_eef"
+  eeFrame1                        "right_eef"
 }
 
 model_settings

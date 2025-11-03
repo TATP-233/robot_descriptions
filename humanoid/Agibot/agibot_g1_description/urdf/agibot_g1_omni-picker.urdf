@@ -642,14 +642,14 @@
 
   <link name="right_eef"/>
   <joint name="right_eef_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.25"/>
+    <origin xyz="0.0 0.0 0.15"/>
     <parent link="right_end_link"/>
     <child link="right_eef"/>
   </joint>
 
   <link name="left_eef"/>
   <joint name="left_eef_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.25"/>
+    <origin xyz="0.0 0.0 0.15"/>
     <parent link="left_end_link"/>
     <child link="left_eef"/>
   </joint>
