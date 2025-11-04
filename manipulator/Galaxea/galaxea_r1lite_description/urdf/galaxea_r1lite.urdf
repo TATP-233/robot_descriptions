@@ -487,28 +487,6 @@
     <parent link="left_link6"/>
     <child link="left_gripper_base"/>
   </joint>
-  <link name="left_D405_link">
-    <inertial>
-      <origin xyz="0.00904707172595565 0.0155186578135894 -0.00819594831599657"/>
-      <mass value="0.1"/>
-      <inertia ixx="2.7808294491585E-05" ixy="-4.06196123763752E-10" ixz="1.50543456146707E-08" iyy="2.1895142505718E-05" iyz="-3.73269688232892E-06" izz="2.07706210421564E-05"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="package://galaxea_r1lite_description/meshes/visual/camera.obj"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
-        <mesh filename="package://galaxea_r1lite_description/meshes/collision/camera.stl"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="left_D405_joint" type="fixed">
-    <origin rpy="-2.268 0 -1.5707963267948966" xyz="-0.019206 0.009 0.074757"/>
-    <parent link="left_gripper_base"/>
-    <child link="left_D405_link"/>
-  </joint>
   <!-- Base Link -->
   <link name="right_base_link">
     <inertial>
@@ -751,27 +729,5 @@
     <origin xyz="0.08165 0 0"/>
     <parent link="right_link6"/>
     <child link="right_gripper_base"/>
-  </joint>
-  <link name="right_D405_link">
-    <inertial>
-      <origin xyz="0.00904707172594749 0.0155186578138565 -0.00819594831521042"/>
-      <mass value="0.1"/>
-      <inertia ixx="2.78082944930657E-05" ixy="-4.06196131154851E-10" ixz="1.50543456329152E-08" iyy="2.18951425070333E-05" iyz="-3.73269688187078E-06" izz="2.07706210423581E-05"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="package://galaxea_r1lite_description/meshes/visual/camera.obj"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
-        <mesh filename="package://galaxea_r1lite_description/meshes/collision/camera.stl"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="right_D405_joint" type="fixed">
-    <origin rpy="-2.268 0 -1.5707963267948966" xyz="-0.019206 0.009 0.074757"/>
-    <parent link="right_gripper_base"/>
-    <child link="right_D405_link"/>
   </joint>
 </robot>
