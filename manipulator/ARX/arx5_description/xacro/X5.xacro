@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="X5" params="name">
+  <xacro:macro name="X5" params="name camera:=d405">
     <xacro:property name="prefix" value="${name + '_' if name else ''}"/>
 
     <link name="${prefix}base_link">
@@ -306,33 +306,62 @@
       <origin xyz="0.05843 0.0249 0" />
     </joint>
 
-    <link name="${prefix}camera_support">
-      <visual>
-        <geometry>
-          <mesh filename="file://$(find arx5_description)/meshes/camera_support.obj"/>
-        </geometry>
-      </visual>
-    </link>
+    <xacro:if value="${camera == 'd405'}">
+      <link name="${prefix}camera_support">
+        <visual>
+          <geometry>
+            <mesh filename="file://$(find arx5_description)/meshes/camera_stand/d405.obj"/>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="${prefix}camera_support_fixed" type="fixed">
+        <parent link="${prefix}link6"/>
+        <child link="${prefix}camera_support"/>
+        <origin xyz="0.045 0 0.021"/>
+      </joint>
 
-    <joint name="${prefix}camera_support_fixed" type="fixed">
-      <parent link="${prefix}link6"/>
-      <child link="${prefix}camera_support"/>
-      <origin xyz="0.045 0 0.021"/>
-    </joint>
+      <link name="${prefix}camera">
+        <visual>
+          <geometry>
+            <mesh filename="file://$(find camera_models)/meshes/d405/d405.obj"/>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="${prefix}camera_fixed" type="fixed">
+        <origin xyz="0.0385 0 0.0475" rpy="0 0.523 0"/>
+        <parent link="${prefix}camera_support"/>
+        <child link="${prefix}camera"/>
+      </joint>
+    </xacro:if>
 
-    <link name="${prefix}camera">
-      <visual>
-        <geometry>
-          <mesh filename="file://$(find camera_models)/meshes/d405/d405.obj"/>
-        </geometry>
-      </visual>
-    </link>
+    <xacro:if value="${camera == 'd435'}">
+      <link name="${prefix}camera_support">
+        <visual>
+          <geometry>
+            <mesh filename="file://$(find arx5_description)/meshes/camera_stand/d435.obj"/>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="${prefix}camera_support_fixed" type="fixed">
+        <parent link="${prefix}link6"/>
+        <child link="${prefix}camera_support"/>
+        <origin xyz="0.045 0 0.021"/>
+      </joint>
 
-    <joint name="${prefix}camera_fixed" type="fixed">
-      <origin xyz="0.0385 0 0.0475" rpy="0 0.523 0"/>
-      <parent link="${prefix}camera_support"/>
-      <child link="${prefix}camera"/>
-    </joint>
+      <link name="${prefix}camera">
+        <visual>
+          <geometry>
+            <mesh filename="file://$(find camera_models)/meshes/d435/d435.obj"/>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="${prefix}camera_fixed" type="fixed">
+        <origin xyz="0.03 0 0.034113" />
+        <parent link="${prefix}camera_support"/>
+        <child link="${prefix}camera"/>
+      </joint>
+    </xacro:if>
+
 
   </xacro:macro>
 </robot>

@@ -232,28 +232,4 @@
     <child link="right_pad"/>
     <origin xyz="0.05843 0.0249 0"/>
   </joint>
-  <link name="camera_support">
-    <visual>
-      <geometry>
-        <mesh filename="package://arx5_description/meshes/camera_support.obj"/>
-      </geometry>
-    </visual>
-  </link>
-  <joint name="camera_support_fixed" type="fixed">
-    <parent link="link6"/>
-    <child link="camera_support"/>
-    <origin xyz="0.045 0 0.021"/>
-  </joint>
-  <link name="camera">
-    <visual>
-      <geometry>
-        <mesh filename="package://camera_models/meshes/d405/d405.obj"/>
-      </geometry>
-    </visual>
-  </link>
-  <joint name="camera_fixed" type="fixed">
-    <origin rpy="0 0.523 0" xyz="0.0385 0 0.0475"/>
-    <parent link="camera_support"/>
-    <child link="camera"/>
-  </joint>
 </robot>
