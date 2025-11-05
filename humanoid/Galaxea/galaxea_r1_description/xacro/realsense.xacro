@@ -14,12 +14,18 @@
       </inertial>
       <visual>
         <geometry>
-          <mesh filename="file://$(find galaxea_r1_description)/meshes/camera_link.obj"/>
+          <mesh filename="file://$(find galaxea_r1_description)/meshes/camera_stand.obj"/>
+        </geometry>
+      </visual>
+      <visual>
+        <origin rpy="${PI/2} ${-PI/2} 0" xyz="0.0325 0 0"/>
+        <geometry>
+          <mesh filename="file://$(find camera_models)/meshes/d435/d435.obj"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="file://$(find galaxea_r1_description)/meshes/camera_link.obj"/>
+          <mesh filename="file://$(find galaxea_r1_description)/meshes/camera_stand.obj"/>
         </geometry>
       </collision>
     </link>

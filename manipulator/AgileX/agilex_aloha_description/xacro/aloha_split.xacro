@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <robot name="Aloha Split" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find agilex_aloha_description)/xacro/ranger_mini.xacro"/>
+  <xacro:include filename="$(find agilex_aloha_description)/xacro/base/ranger_mini.xacro"/>
   <xacro:include filename="$(find piper_description)/xacro/Piper.xacro"/>
 
   <link name="box_link">
@@ -77,18 +77,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file://$(find agilex_aloha_description)/meshes/aloha_split/mid360.obj"/>
+        <mesh filename="file://$(find camera_models)/meshes/mid360/mid360.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find agilex_aloha_description)/meshes/aloha_split/mid360.obj"/>
+        <mesh filename="file://$(find camera_models)/meshes/mid360/mid360.obj"/>
       </geometry>
     </collision>
   </link>
 
   <joint name="lidar_joint" type="fixed">
-    <origin xyz="0.31755 0 0.036188" rpy="-0.035132 0.20001 -0.001242"/>
+    <origin xyz="0.31755 0 0.036188"/>
     <parent link="box_link"/>
     <child link="lidar_link"/>
   </joint>
