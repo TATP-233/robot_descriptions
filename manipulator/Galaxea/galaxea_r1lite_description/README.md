@@ -31,10 +31,16 @@ ros2 launch robot_common_launch manipulator.launch.py robot:=galaxea_r1lite type
 
 ### 3.1 Official OCS2 Mobile Manipulator Demo
 
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=galaxea_r1lite
-```
+* With R1X
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=galaxea_r1lite
+    ```
+* With R1Y
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=galaxea_r1lite type:=y
+    ```
 
 ### 3.2 OCS2 Arm Controller Demo
 

@@ -519,7 +519,7 @@
     <parent link="left_gripper_base"/>
     <child link="left_finger1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="100" lower="0" upper="0.05" velocity="0.25"/>
+    <limit effort="10" lower="0" upper="0.05" velocity="0.25"/>
   </joint>
   <link name="left_finger2">
     <inertial>
@@ -543,7 +543,7 @@
     <parent link="left_gripper_base"/>
     <child link="left_finger2"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="100" lower="0" upper="0.05" velocity="0.25"/>
+    <limit effort="10" lower="0" upper="0.05" velocity="0.25"/>
     <mimic joint="left_gripper_joint" multiplier="1" offset="0"/>
   </joint>
   <link name="left_gripper_center"/>
@@ -574,12 +574,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_r1_description/meshes/camera_link.obj"/>
+        <mesh filename="package://galaxea_r1_description/meshes/camera_stand.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="1.5707963267948966 -1.5707963267948966 0" xyz="0.0325 0 0"/>
+      <geometry>
+        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_r1_description/meshes/camera_link.obj"/>
+        <mesh filename="package://galaxea_r1_description/meshes/camera_stand.obj"/>
       </geometry>
     </collision>
   </link>
@@ -802,7 +808,7 @@
     <parent link="right_gripper_base"/>
     <child link="right_finger1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="100" lower="0" upper="0.05" velocity="0.25"/>
+    <limit effort="10" lower="0" upper="0.05" velocity="0.25"/>
   </joint>
   <link name="right_finger2">
     <inertial>
@@ -826,7 +832,7 @@
     <parent link="right_gripper_base"/>
     <child link="right_finger2"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="100" lower="0" upper="0.05" velocity="0.25"/>
+    <limit effort="10" lower="0" upper="0.05" velocity="0.25"/>
     <mimic joint="right_gripper_joint" multiplier="1" offset="0"/>
   </joint>
   <link name="right_gripper_center"/>
@@ -857,12 +863,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_r1_description/meshes/camera_link.obj"/>
+        <mesh filename="package://galaxea_r1_description/meshes/camera_stand.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="1.5707963267948966 -1.5707963267948966 0" xyz="0.0325 0 0"/>
+      <geometry>
+        <mesh filename="package://camera_models/meshes/d435/d435.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_r1_description/meshes/camera_link.obj"/>
+        <mesh filename="package://galaxea_r1_description/meshes/camera_stand.obj"/>
       </geometry>
     </collision>
   </link>

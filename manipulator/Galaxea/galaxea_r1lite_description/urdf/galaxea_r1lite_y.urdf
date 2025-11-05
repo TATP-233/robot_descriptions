@@ -316,81 +316,81 @@
   </joint>
   <link name="left_link3">
     <inertial>
-      <origin xyz="0.0566624793223791 -0.0291316466078999 0.0568018844686509"/>
-      <mass value="0.739"/>
-      <inertia ixx="0.000257907545256439" ixy="1.02695451350475E-05" ixz="-0.000131693719602983" iyy="0.000671352233244435" iyz="-8.03382534299068E-06" izz="0.000550051611056369"/>
+      <origin xyz="0.0795681449160072 -0.0327357454565678 0.065177920553168"/>
+      <mass value="0.762"/>
+      <inertia ixx="0.000282703505875711" ixy="-4.06256349285171E-06" ixz="-7.63228373259732E-05" iyy="0.000329835410245831" iyz="-1.03493005263955E-05" izz="0.000237652038430906"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link3.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link3.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link3.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link3.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_joint3" type="revolute">
-    <origin xyz="-0.3 0.00025004 0"/>
+    <origin xyz="-0.3 0.00024449 0"/>
     <parent link="left_link2"/>
     <child link="left_link3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="27" lower="-3.3161" upper="0" velocity="10.472"/>
+    <limit effort="27" lower="-3.316127" upper="0" velocity="10.4720"/>
   </joint>
   <link name="left_link4">
     <inertial>
-      <origin xyz="0.0699840030193581 -0.0287504697364447 0.0541968318197228"/>
-      <mass value="0.419"/>
-      <inertia ixx="6.62006896114572E-05" ixy="-9.3635648969069E-09" ixz="-4.25876556256057E-09" iyy="6.79307239443371E-05" iyz="7.77726883989867E-07" izz="6.69265447808637E-05"/>
+      <origin xyz="0.0388578803222686 0.000937806543809841 -1.15721572034322E-05"/>
+      <mass value="0.353"/>
+      <inertia ixx="5.97701758868814E-05" ixy="-6.87774799668449E-10" ixz="-2.14372946639157E-10" iyy="6.0587917049985E-05" iyz="-5.98401601618766E-11" izz="5.98342278178533E-05"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link4.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link4.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link4.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link4.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_joint4" type="revolute">
-    <origin xyz="0.1747 0.00049739 0.075485"/>
+    <origin xyz="0.1544 -0.030998 0.075485"/>
     <parent link="left_link3"/>
     <child link="left_link4"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="14" lower="-3.141592653589793" upper="3.141592653589793" velocity="32.9867"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="14" lower="-2.879795" upper="2.879795" velocity="32.9867"/>
   </joint>
   <link name="left_link5">
     <inertial>
-      <origin xyz="-0.000803198983898074 -2.29028914278118E-07 -0.0402656141956459"/>
-      <mass value="0.054"/>
-      <inertia ixx="5.80420988761095E-05" ixy="-1.94657864482709E-13" ixz="1.11613844426808E-14" iyy="5.76397557796697E-05" iyz="-3.56183851121823E-11" izz="5.68558379713068E-05"/>
+      <origin xyz="0.0526293728146609 -0.0197387756630963 7.38547745043894E-06"/>
+      <mass value="0.366"/>
+      <inertia ixx="5.87226827172217E-05" ixy="3.94835644387525E-09" ixz="-1.57113932950695E-12" iyy="6.96559934519655E-05" iyz="7.55674102061766E-09" izz="6.85055623583414E-05"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link5.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link5.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link5.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link5.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="left_joint5" type="revolute">
-    <origin xyz="0.08 -0.031498 0.0405"/>
+    <origin xyz="0.0418 0.023501 0"/>
     <parent link="left_link4"/>
     <child link="left_link5"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="14" lower="-3.141592653589793" upper="3.141592653589793" velocity="32.9867"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="14" lower="-1.832597" upper="1.832597" velocity="32.9867"/>
   </joint>
   <link name="left_link6">
     <inertial>
-      <origin xyz="0.00709944426961403 -8.90673146347609E-10 -3.82632235882419E-05"/>
+      <origin xyz="0.00709944781467154 1.26586535489642E-07 -3.8262881471296E-05"/>
       <mass value="0.031"/>
-      <inertia ixx="3.44527427683917E-06" ixy="-2.00656296989553E-13" ixz="-1.26136975189559E-09" iyy="1.82572780689222E-06" iyz="-3.95364679222355E-15" izz="1.81730990577526E-06"/>
+      <inertia ixx="3.44528457425794E-06" ixy="2.98138934982256E-11" ixz="-1.26128084918303E-09" iyy="1.82573408455416E-06" iyz="1.17092872453752E-14" izz="1.8173151968758E-06"/>
     </inertial>
     <visual>
       <geometry>
@@ -404,11 +404,11 @@
     </collision>
   </link>
   <joint name="left_joint6" type="revolute">
-    <origin xyz="0.022503 0 -0.0405"/>
+    <origin xyz="0.081 -0.023499 0"/>
     <parent link="left_link5"/>
     <child link="left_link6"/>
     <axis xyz="1 0 0"/>
-    <limit effort="14" lower="-2.8798" upper="2.8798" velocity="32.9867"/>
+    <limit effort="14" lower="-2.879795" upper="2.879795" velocity="32.9867"/>
   </joint>
   <link name="left_gripper_base">
     <inertial>
@@ -501,7 +501,7 @@
     <visual>
       <origin rpy="0 -1.5707963267948966 1.5707963267948966" xyz="0.008996 0 0"/>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d405/d405.obj"/>
+        <mesh filename="package://share/camera_models/meshes/d405/d405.obj"/>
       </geometry>
     </visual>
     <collision>
@@ -587,81 +587,81 @@
   </joint>
   <link name="right_link3">
     <inertial>
-      <origin xyz="0.0566624793223791 -0.0291316466078999 0.0568018844686509"/>
-      <mass value="0.739"/>
-      <inertia ixx="0.000257907545256439" ixy="1.02695451350475E-05" ixz="-0.000131693719602983" iyy="0.000671352233244435" iyz="-8.03382534299068E-06" izz="0.000550051611056369"/>
+      <origin xyz="0.0795681449160072 -0.0327357454565678 0.065177920553168"/>
+      <mass value="0.762"/>
+      <inertia ixx="0.000282703505875711" ixy="-4.06256349285171E-06" ixz="-7.63228373259732E-05" iyy="0.000329835410245831" iyz="-1.03493005263955E-05" izz="0.000237652038430906"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link3.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link3.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link3.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link3.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_joint3" type="revolute">
-    <origin xyz="-0.3 0.00025004 0"/>
+    <origin xyz="-0.3 0.00024449 0"/>
     <parent link="right_link2"/>
     <child link="right_link3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="27" lower="-3.3161" upper="0" velocity="10.472"/>
+    <limit effort="27" lower="-3.316127" upper="0" velocity="10.4720"/>
   </joint>
   <link name="right_link4">
     <inertial>
-      <origin xyz="0.0699840030193581 -0.0287504697364447 0.0541968318197228"/>
-      <mass value="0.419"/>
-      <inertia ixx="6.62006896114572E-05" ixy="-9.3635648969069E-09" ixz="-4.25876556256057E-09" iyy="6.79307239443371E-05" iyz="7.77726883989867E-07" izz="6.69265447808637E-05"/>
+      <origin xyz="0.0388578803222686 0.000937806543809841 -1.15721572034322E-05"/>
+      <mass value="0.353"/>
+      <inertia ixx="5.97701758868814E-05" ixy="-6.87774799668449E-10" ixz="-2.14372946639157E-10" iyy="6.0587917049985E-05" iyz="-5.98401601618766E-11" izz="5.98342278178533E-05"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link4.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link4.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link4.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link4.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_joint4" type="revolute">
-    <origin xyz="0.1747 0.00049739 0.075485"/>
+    <origin xyz="0.1544 -0.030998 0.075485"/>
     <parent link="right_link3"/>
     <child link="right_link4"/>
-    <axis xyz="0 1 0"/>
-    <limit effort="14" lower="-3.141592653589793" upper="3.141592653589793" velocity="32.9867"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="14" lower="-2.879795" upper="2.879795" velocity="32.9867"/>
   </joint>
   <link name="right_link5">
     <inertial>
-      <origin xyz="-0.000803198983898074 -2.29028914278118E-07 -0.0402656141956459"/>
-      <mass value="0.054"/>
-      <inertia ixx="5.80420988761095E-05" ixy="-1.94657864482709E-13" ixz="1.11613844426808E-14" iyy="5.76397557796697E-05" iyz="-3.56183851121823E-11" izz="5.68558379713068E-05"/>
+      <origin xyz="0.0526293728146609 -0.0197387756630963 7.38547745043894E-06"/>
+      <mass value="0.366"/>
+      <inertia ixx="5.87226827172217E-05" ixy="3.94835644387525E-09" ixz="-1.57113932950695E-12" iyy="6.96559934519655E-05" iyz="7.55674102061766E-09" izz="6.85055623583414E-05"/>
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link5.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link5.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_x/link5.obj"/>
+        <mesh filename="package://galaxea_a1_description/meshes/a1_xy/a1_y/link5.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_joint5" type="revolute">
-    <origin xyz="0.08 -0.031498 0.0405"/>
+    <origin xyz="0.0418 0.023501 0"/>
     <parent link="right_link4"/>
     <child link="right_link5"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="14" lower="-3.141592653589793" upper="3.141592653589793" velocity="32.9867"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="14" lower="-1.832597" upper="1.832597" velocity="32.9867"/>
   </joint>
   <link name="right_link6">
     <inertial>
-      <origin xyz="0.00709944426961403 -8.90673146347609E-10 -3.82632235882419E-05"/>
+      <origin xyz="0.00709944781467154 1.26586535489642E-07 -3.8262881471296E-05"/>
       <mass value="0.031"/>
-      <inertia ixx="3.44527427683917E-06" ixy="-2.00656296989553E-13" ixz="-1.26136975189559E-09" iyy="1.82572780689222E-06" iyz="-3.95364679222355E-15" izz="1.81730990577526E-06"/>
+      <inertia ixx="3.44528457425794E-06" ixy="2.98138934982256E-11" ixz="-1.26128084918303E-09" iyy="1.82573408455416E-06" iyz="1.17092872453752E-14" izz="1.8173151968758E-06"/>
     </inertial>
     <visual>
       <geometry>
@@ -675,11 +675,11 @@
     </collision>
   </link>
   <joint name="right_joint6" type="revolute">
-    <origin xyz="0.022503 0 -0.0405"/>
+    <origin xyz="0.081 -0.023499 0"/>
     <parent link="right_link5"/>
     <child link="right_link6"/>
     <axis xyz="1 0 0"/>
-    <limit effort="14" lower="-2.8798" upper="2.8798" velocity="32.9867"/>
+    <limit effort="14" lower="-2.879795" upper="2.879795" velocity="32.9867"/>
   </joint>
   <link name="right_gripper_base">
     <inertial>
@@ -772,7 +772,7 @@
     <visual>
       <origin rpy="0 -1.5707963267948966 1.5707963267948966" xyz="0.008996 0 0"/>
       <geometry>
-        <mesh filename="package://camera_models/meshes/d405/d405.obj"/>
+        <mesh filename="package://share/camera_models/meshes/d405/d405.obj"/>
       </geometry>
     </visual>
     <collision>
