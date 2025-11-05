@@ -302,7 +302,7 @@
 			<link name="${prefix}camera_support">
 				<visual>
 					<geometry>
-						<mesh filename="file://$(find arx5_description)/meshes/camera_stand/d405.obj"/>
+						<mesh filename="file://$(find arx5_description)/meshes/camera_stand/stand_d405.obj"/>
 					</geometry>
 				</visual>
 			</link>
@@ -330,7 +330,7 @@
 			<link name="${prefix}camera_support">
 				<visual>
 					<geometry>
-						<mesh filename="file://$(find arx5_description)/meshes/camera_stand/d435.obj"/>
+						<mesh filename="file://$(find arx5_description)/meshes/camera_stand/stand_d435.obj"/>
 					</geometry>
 				</visual>
 			</link>
