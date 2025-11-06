@@ -250,12 +250,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://agilex_aloha_description/meshes/aloha_split/mid360.obj"/>
+        <mesh filename="package://camera_models/meshes/mid360/mid360.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://agilex_aloha_description/meshes/aloha_split/mid360.obj"/>
+        <mesh filename="package://camera_models/meshes/mid360/mid360.obj"/>
       </geometry>
     </collision>
   </link>
