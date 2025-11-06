@@ -42,7 +42,13 @@ colcon build --packages-up-to agilex_aloha_description --symlink-install
 * Aloha V2 (Tracer V2 Base)
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch robot_common_launch manipulator.launch.py robot:=agilex_aloha type:="v2.1"
+ros2 launch robot_common_launch manipulator.launch.py robot:=agilex_aloha type:="v2-1"
+```
+
+* Aloha V2 (Tracer V2 Base with Master Arm)
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch robot_common_launch manipulator.launch.py robot:=agilex_aloha type:="v2-master"
 ```
 
 ### 2.2 Component

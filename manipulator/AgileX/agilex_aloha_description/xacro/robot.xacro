@@ -24,8 +24,13 @@
     <xacro:aloha_v2/>
   </xacro:if>
 
-  <xacro:if value="${'$(arg type)' == 'v2.1'}">
+  <xacro:if value="${'$(arg type)' == 'v2-1'}">
     <xacro:include filename="$(find agilex_aloha_description)/xacro/aloha_v2.xacro"/>
     <xacro:aloha_v2 chassis="tracer_v2"/>
+  </xacro:if>
+
+  <xacro:if value="${'$(arg type)' == 'v2-master'}">
+    <xacro:include filename="$(find agilex_aloha_description)/xacro/aloha_v2.xacro"/>
+    <xacro:aloha_v2 chassis="tracer_v2" enable_master="true"/>
   </xacro:if>
 </robot>

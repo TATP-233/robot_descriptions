@@ -47,14 +47,9 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file://$(find agilex_aloha_description)/meshes/aloha_split/camera.obj"/>
+        <mesh filename="file://$(find camera_models)/meshes/dabai/dabai.obj"/>
       </geometry>
     </visual>
-    <collision>
-      <geometry>
-        <mesh filename="file://$(find agilex_aloha_description)/meshes/aloha_split/camera.obj"/>
-      </geometry>
-    </collision>
   </link>
 
   <joint name="front_camera_joint" type="fixed">
@@ -80,11 +75,6 @@
         <mesh filename="file://$(find camera_models)/meshes/mid360/mid360.obj"/>
       </geometry>
     </visual>
-    <collision>
-      <geometry>
-        <mesh filename="file://$(find camera_models)/meshes/mid360/mid360.obj"/>
-      </geometry>
-    </collision>
   </link>
 
   <joint name="lidar_joint" type="fixed">
@@ -139,14 +129,9 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file://$(find agilex_aloha_description)/meshes/aloha_split/camera.obj"/>
+        <mesh filename="file://$(find camera_models)/meshes/dabai/dabai.obj"/>
       </geometry>
     </visual>
-    <collision>
-      <geometry>
-        <mesh filename="file://$(find agilex_aloha_description)/meshes/aloha_split/camera.obj"/>
-      </geometry>
-    </collision>
   </link>
 
   <joint name="top_camera_joint" type="fixed">

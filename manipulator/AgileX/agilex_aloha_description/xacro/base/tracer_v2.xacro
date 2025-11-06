@@ -24,15 +24,12 @@
 		</inertial>
 		<visual>
 			<geometry>
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/base_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/base.obj"/>
 			</geometry>
-			<material name="">
-				<color rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/base_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/base.obj"/>
 			</geometry>
 		</collision>
 	</link>
@@ -52,44 +49,27 @@
 		<visual>
 
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/right_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/drive_wheel.obj"/>
 			</geometry>
-			<material
-					name="">
-				<color
-						rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/right_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/drive_wheel.obj"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint
-			name="right_joint"
-			type="continuous">
-		<origin
-				xyz="-0.018818 -0.2537 -0.0905"
-				rpy="-1.5708 0 0"/>
-		<parent
-				link="base_link"/>
-		<child
-				link="right_link"/>
-		<axis
-				xyz="0 0 1"/>
+
+	<joint name="right_joint" type="continuous">
+		<origin xyz="-0.018818 -0.2537 -0.0905" rpy="-1.5708 0 0"/>
+		<parent link="base_link"/>
+		<child link="right_link"/>
+		<axis xyz="0 0 1"/>
 	</joint>
-	<link
-			name="left_Link">
+
+	<link name="left_Link">
 		<inertial>
-			<origin
-					xyz="-8.2507E-18 0 -0.005"
-			/>
-			<mass
-					value="0.14836"/>
+			<origin xyz="-8.2507E-18 0 -0.005"/>
+			<mass value="0.14836"/>
 			<inertia
 					ixx="0.00013099"
 					ixy="6.6936E-21"
@@ -99,46 +79,28 @@
 					izz="0.00023781"/>
 		</inertial>
 		<visual>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/left_Link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/drive_wheel.obj"/>
 			</geometry>
-			<material
-					name="">
-				<color
-						rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/left_Link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/drive_wheel.obj"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint
-			name="left_joint"
-			type="continuous">
-		<origin
-				xyz="-0.018818 0.2537 -0.0905"
-				rpy="1.5708 0 0"/>
-		<parent
-				link="base_link"/>
-		<child
-				link="left_Link"/>
-		<axis
-				xyz="0 0 1"/>
+
+	<joint name="left_joint" type="continuous">
+		<origin xyz="-0.018818 0.2537 -0.0905" rpy="1.5708 0 0"/>
+		<parent link="base_link"/>
+		<child link="left_Link"/>
+		<axis xyz="0 0 1"/>
 	</joint>
-	<link
-			name="right_front_link">
+
+	<link name="right_front_link">
 		<inertial>
-			<origin
-					xyz="-0.013166 2.7397E-05 0.04181"
-			/>
-			<mass
-					value="0.2864"/>
+			<origin xyz="-0.013166 2.7397E-05 0.04181"/>
+			<mass value="0.2864"/>
 			<inertia
 					ixx="0.00029479"
 					ixy="5.5901E-08"
@@ -148,46 +110,27 @@
 					izz="0.00020885"/>
 		</inertial>
 		<visual>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/right_front_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
-			<material
-					name="">
-				<color
-						rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/right_front_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint
-			name="right_front_joint"
-			type="fixed">
-		<origin
-				xyz="0.23918 -0.1977 -0.058"
-				rpy="3.1416 0 0"/>
-		<parent
-				link="base_link"/>
-		<child
-				link="right_front_link"/>
-		<axis
-				xyz="0 0 0"/>
+
+	<joint name="right_front_joint" type="fixed">
+		<origin xyz="0.23918 -0.1977 -0.058" rpy="3.1416 0 0"/>
+		<parent link="base_link"/>
+		<child link="right_front_link"/>
 	</joint>
-	<link
-			name="right_rear_link">
+
+	<link name="right_rear_link">
 		<inertial>
-			<origin
-					xyz="-0.013166 2.7397E-05 0.04181"
-			/>
-			<mass
-					value="0.2864"/>
+			<origin xyz="-0.013166 2.7397E-05 0.04181"/>
+			<mass value="0.2864"/>
 			<inertia
 					ixx="0.00029479"
 					ixy="5.5901E-08"
@@ -197,46 +140,27 @@
 					izz="0.00020885"/>
 		</inertial>
 		<visual>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/right_rear_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
-			<material
-					name="">
-				<color
-						rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/right_rear_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint
-			name="right_rea_joint"
-			type="fixed">
-		<origin
-				xyz="-0.27082 -0.183 -0.058"
-				rpy="3.1416 0 0"/>
-		<parent
-				link="base_link"/>
-		<child
-				link="right_rear_link"/>
-		<axis
-				xyz="0 0 0"/>
+
+	<joint name="right_rea_joint" type="fixed">
+		<origin xyz="-0.27082 -0.183 -0.058" rpy="3.1416 0 0"/>
+		<parent link="base_link"/>
+		<child link="right_rear_link"/>
 	</joint>
-	<link
-			name="left_front_link">
+
+	<link name="left_front_link">
 		<inertial>
-			<origin
-					xyz="-0.013166 -2.7397E-05 -0.04181"
-			/>
-			<mass
-					value="0.2864"/>
+			<origin xyz="-0.013166 -2.7397E-05 -0.04181"/>
+			<mass value="0.2864"/>
 			<inertia
 					ixx="0.00029479"
 					ixy="-5.5901E-08"
@@ -246,83 +170,50 @@
 					izz="0.00020885"/>
 		</inertial>
 		<visual>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/left_front_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
-			<material
-					name="">
-				<color
-						rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/left_front_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint
-			name="left_front_joint"
-			type="fixed">
-		<origin
-				xyz="0.23918 0.1977 -0.058"
-		/>
-		<parent
-				link="base_link"/>
-		<child
-				link="left_front_link"/>
-		<axis
-				xyz="0 0 0"/>
-	</joint>
-	<link
-			name="left_rear_link">
-		<inertial>
 
-			<mass
-					value="0"/>
+	<joint name="left_front_joint" type="fixed">
+		<origin xyz="0.23918 0.1977 -0.058"/>
+		<parent link="base_link"/>
+		<child link="left_front_link"/>
+	</joint>
+
+	<link name="left_rear_link">
+		<inertial>
+			<mass value="0.2864"/>
 			<inertia
-					ixx="0"
-					ixy="0"
-					ixz="0"
-					iyy="0"
-					iyz="0"
-					izz="0"/>
+					ixx="0.00029479"
+					ixy="-5.5901E-08"
+					ixz="-5.9543E-05"
+					iyy="0.00032696"
+					iyz="-1.5316E-07"
+					izz="0.00020885"/>
 		</inertial>
 		<visual>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/left_rear_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
-			<material
-					name="">
-				<color
-						rgba="1 1 1 1"/>
-			</material>
 		</visual>
 		<collision>
-
 			<geometry>
-				<mesh
-						filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/left_rear_link.STL"/>
+				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer_v2/support_wheel.obj"/>
 			</geometry>
 		</collision>
 	</link>
-	<joint
-			name="left_rear_joint"
-			type="fixed">
-		<origin
-				xyz="-0.27077 0.18305 -0.058"
-		/>
-		<parent
-				link="base_link"/>
-		<child
-				link="left_rear_link"/>
-		<axis
-				xyz="0 0 0"/>
+
+	<joint name="left_rear_joint" type="fixed">
+		<origin xyz="-0.27077 0.18305 -0.058"/>
+		<parent link="base_link"/>
+		<child link="left_rear_link"/>
 	</joint>
+
 </robot>

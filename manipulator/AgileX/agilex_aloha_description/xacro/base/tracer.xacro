@@ -4,7 +4,7 @@
 	<link name="base_footprint"/>
 
 	<joint name="base_joint" type="fixed">
-		<origin xyz="0 0 0.15"/>
+		<origin xyz="0 0 0.143"/>
 		<parent link="base_footprint"/>
 		<child link="base_link"/>
 		<axis/>
@@ -12,13 +12,11 @@
 
 	<link name="base_link">
 		<visual>
-			<origin rpy="1.57 0 0"/>
 			<geometry>
 				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/tracer_base_link.obj"/>
 			</geometry>
 		</visual>
 		<collision>
-			<origin rpy="1.57 0 0"/>
 			<geometry>
 				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/tracer_base_link.obj"/>
 			</geometry>
@@ -188,7 +186,7 @@
 		<parent link="fl_castor_link"/>
 		<child link="fl_wheel_link"/>
 		<dynamics damping="0.0" friction="0.0"/>
-		<origin xyz="-0.0218084 0.077 0"/>
+		<origin xyz="-0.022 0.06385 0"/>
 		<axis xyz="0 0 1"/>
 	</joint>
 
@@ -203,7 +201,6 @@
 			</geometry>
 		</visual>
 		<collision>
-
 			<geometry>-->
 				<mesh filename="file://$(find agilex_aloha_description)/meshes/tracer/castor.obj"/>
 			</geometry>
@@ -214,7 +211,7 @@
 		<parent link="fr_castor_link"/>
 		<child link="fr_wheel_link"/>
 		<dynamics damping="0.0" friction="0.0"/>
-		<origin xyz="-0.0218084 0.077 0"/>
+		<origin xyz="-0.022 0.06385 0"/>
 		<axis xyz="0 0 1"/>
 	</joint>
 
@@ -239,7 +236,7 @@
 		<parent link="rr_castor_link"/>
 		<child link="rr_wheel_link"/>
 		<dynamics damping="0.0" friction="0.0"/>
-		<origin xyz="-0.0218084 0.077 0"/>
+		<origin xyz="-0.022 0.06385 0"/>
 		<axis xyz="0 0 1"/>
 	</joint>
 
@@ -264,7 +261,7 @@
 		<parent link="rl_castor_link"/>
 		<child link="rl_wheel_link"/>
 		<dynamics damping="0.0" friction="0.0"/>
-		<origin xyz="-0.0218084 0.077 0"/>
+		<origin xyz="-0.022 0.06385 0"/>
 		<axis xyz="0 0 1"/>
 	</joint>
 </robot>

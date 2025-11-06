@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <robot name="aloha v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<xacro:macro name="aloha_v2" params="chassis:=tracer">
+	<xacro:macro name="aloha_v2" params="chassis:=tracer enable_master:=false">
 		<xacro:include filename="$(find piper_description)/xacro/Piper.xacro"/>
 
 		<xacro:if value="${chassis == 'tracer'}">
@@ -37,42 +37,96 @@
 			<child link="body_Link"/>
 			<axis/>
 		</joint>
+
+		<link name="camera_link">
+			<inertial>
+				<origin xyz="-0.011443 2.4833E-05 -0.0012615"/>
+				<mass value="0.020053"/>
+				<inertia
+						ixx="1.1181E-05"
+						ixy="1.204E-07"
+						ixz="4.9068E-08"
+						iyy="2.2587E-06"
+						iyz="5.7637E-07"
+						izz="1.0097E-05"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find camera_models)/meshes/dabai/dabai.obj"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="camera_joint" type="fixed">
+			<origin xyz="0.24007 0 0.91661" rpy="0 0.825 0"/>
+			<parent link="body_Link"/>
+			<child link="camera_link"/>
+		</joint>
+
+		<link name="lidar_link">
+			<inertial>
+				<origin xyz="-0.0022133 -0.00090659 0.025996"/>
+				<mass value="0.048617"/>
+				<inertia
+						ixx="1.0358E-05"
+						ixy="9.2377E-09"
+						ixz="-2.6386E-07"
+						iyy="1.0387E-05"
+						iyz="-2.6377E-07"
+						izz="1.7919E-05"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find camera_models)/meshes/mid360/mid360.obj"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="lidar_joint" type="fixed">
+			<origin xyz="0.27289 0 0.01488"/>
+			<parent link="body_Link"/>
+			<child link="lidar_link"/>
+		</joint>
 		<!--***************************** front-left ****************************** -->
 
-		<xacro:Piper name="fl"/>
-		<joint name="fl_base_joint" type="fixed">
+		<xacro:Piper name="left"/>
+		<joint name="left_base_joint" type="fixed">
 			<origin xyz="0.23875 0.3 0.607"/>
 			<parent link="body_Link"/>
-			<child link="fl_base_link"/>
+			<child link="left_base_link"/>
 			<axis xyz="0 0 1"/>
 		</joint>
 
 		<!--***************************** front-right ****************************** -->
-		<xacro:Piper name="fr"/>
-		<joint name="fr_base_joint" type="fixed">
+		<xacro:Piper name="right"/>
+		<joint name="right_base_joint" type="fixed">
 			<origin xyz="0.23875 -0.3 0.607"/>
 			<parent link="body_Link"/>
-			<child link="fr_base_link"/>
+			<child link="right_base_link"/>
 			<axis xyz="0 0 1"/>
 		</joint>
 
 		<!--***************************** back-left ****************************** -->
-		<xacro:Piper name="bl" is_master="true"/>
-		<joint name="bl_base_joint" type="fixed">
-			<origin xyz="-0.379 0.3075 0.733"/>
-			<parent link="body_Link"/>
-			<child link="bl_base_link"/>
-			<axis xyz="0 0 1"/>
-		</joint>
+		<xacro:if value="${enable_master}">
+			<xacro:Piper name="bl" is_master="true"/>
+			<joint name="bl_base_joint" type="fixed">
+				<origin xyz="-0.379 0.3075 0.733"/>
+				<parent link="body_Link"/>
+				<child link="bl_base_link"/>
+				<axis xyz="0 0 1"/>
+			</joint>
+		</xacro:if>
 
 		<!--***************************** back-right ****************************** -->
-		<xacro:Piper name="br" is_master="true"/>
-		<joint name="br_base_joint" type="fixed">
-			<origin xyz="-0.379 -0.3075 0.733"/>
-			<parent link="body_Link"/>
-			<child link="br_base_link"/>
-			<axis xyz="0 0 1"/>
-		</joint>
+		<xacro:if value="${enable_master}">
+			<xacro:Piper name="br" is_master="true"/>
+			<joint name="br_base_joint" type="fixed">
+				<origin xyz="-0.379 -0.3075 0.733"/>
+				<parent link="body_Link"/>
+				<child link="br_base_link"/>
+				<axis xyz="0 0 1"/>
+			</joint>
+		</xacro:if>
 	</xacro:macro>
 </robot>
 

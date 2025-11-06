@@ -120,6 +120,31 @@
 			<child link="camera_link2"/>
 		</joint>
 
+		<link name="lidar_link">
+			<inertial>
+				<origin xyz="-0.0022133 -0.00090659 0.025996"/>
+				<mass value="0.048617"/>
+				<inertia
+						ixx="1.0358E-05"
+						ixy="9.2377E-09"
+						ixz="-2.6386E-07"
+						iyy="1.0387E-05"
+						iyz="-2.6377E-07"
+						izz="1.7919E-05"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find camera_models)/meshes/mid360/mid360.obj"/>
+				</geometry>
+			</visual>
+		</link>
+
+		<joint name="lidar_joint" type="fixed">
+			<origin xyz="0.22937 0 0.040672"/>
+			<parent link="body_link"/>
+			<child link="lidar_link"/>
+		</joint>
+
 		<joint name="fl_base_joint" type="fixed">
 			<origin xyz="0.233 0.3 0.7775"/>
 			<parent link="base_footprint"/>
